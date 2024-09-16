@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <meta name="robots" content="noindex">
+  <title>CodePen - A Pen by Cassie Evans</title>
+  
+  
+  
+  
+<style>
+body {
+	min-height: 200vh;
+	padding: 0;
+	padding-top: 100vh;
+	background-color: #dfdfdf;
+	margin: 0;
+}
+
+.container {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3rem;
+}
+
+.laptop,
+.text {
+	position: relative;
+	height: 300px;
+	flex: 0 1 45%;
+}
+
+.laptop img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.text div {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container">
+	<div class="text">
+		<div class="p-one">
+			<p>Chupa chups toffee chocolate dessert chupa chups chupa chups donut. Marshmallow pudding biscuit toffee lemon drops caramels. Biscuit croissant topping. Apple pie powder candy gummi bears gingerbread topping.</p>
+		</div>
+		<div class="p-two">
+			<p>Dessert tart dragée chocolate bar chupa chups cookie candy. Jujubes muffin sesame snaps sesame snaps chocolate cake pastry gummies danish marzipan. Marshmallow croissant chocolate bar lollipop. Topping fruitcake sweet roll. Bonbon fruitcake dessert bear claw fruitcake bonbon lollipop tart.
+			<p>
+		</div>
+	</div>
+
+	<div class="laptop">
+		<img class="img-one" src="https://i.ibb.co/KmtsRDw/GIL-Dashboard.png" alt="">
+		<img class="img-two" src="https://i.ibb.co/ZKrZhYt/GIL-multi-Langue.png" alt="">
+	</div>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+<script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+      <script id="rendered-js" >
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".container",
+    toggleActions: "restart complete reverse resume",
+    start: "top top",
+    markers: true,
+    scrub: true,
+    pin: true } });
+
+
+
+tl.to(".p-one", {
+  autoAlpha: 0 });
+
+tl.from(".p-two", {
+  autoAlpha: 0,
+  y: 20 });
+
+tl.set(
+".img-one",
+{
+  autoAlpha: 0 },
+
+"<");
+
+tl.from(
+".img-two",
+{
+  autoAlpha: 0 },
+
+"<");
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 

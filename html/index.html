@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  
+  <link rel='stylesheet' href='https://code.jquery.com/ui/jquery-ui-git.css'>
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+
+
+  <style>
+#ui-id-1{height: 324px;width: 305px !important;padding: 20px 0 0 0;overflow-y: auto;z-index: 10000;background: linear-gradient(0deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #121212;border: 0;}
+#ui-id-1.ui-menu .ui-menu-item-wrapper{border-bottom: 1px solid rgb(170 174 187 / 16%) !important;padding: 0 0 16px 0;margin: 0 0 16px 0;}
+#ui-id-1.ui-menu .ui-menu-item-wrapper.ui-state-active{background: linear-gradient(0deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #121212;border: 0;border-color: transparent;}
+#ui-id-1 .ui-menu-item-wrapper p{font-weight: 600;font-size: 16px;color: #FFFFFA;text-transform: capitalize;line-height: 24px;}
+#ui-id-1 .ui-menu-item-wrapper span{display: block;font-size: 14px;line-height: 22px;color: rgba(255, 255, 250, 0.8) !important;text-transform: capitalize;font-weight: 400;margin-top: 8px;}
+
+  </style>
+  <title>Index</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header_sec">
+    	<nav class="navbar navbar-expand-lg navbar-light header_color px-md-0">
+    		<div class="container">
+          <img src="images/logo.png" class="img-fluid logo_img">
+          <div class="d--none position-relative">
+            <div class="d-flex address_info cursor-pointer"  data-toggle="modal" data-target="#locationModal">
+              <div><img src="images/location.png" class="img-fluid"></div>
+              <span>Haryana</span>
+              <!-- <p class="min-max-991">Tower-A, Flat no. 854,...</p> -->
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img class="hamberger" src="images/Hamburger.png">
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="desktop-menu ml-auto">
+              <ul class="navbar-nav ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Corporate Tie Up <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Party Time</a>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn_signin ml-4" type="button" data-toggle="modal" data-target="#loginmodal">Sign In</button>
+                </li>
+                <!-- <img  src="images/empty.png" class="img-fluid empoty"> -->
+                <li class="nav-item">
+                  <a href=""><span class="Profile_letter">A</span></a>
+                </li>
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle px-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="images/Hamburger.png" class="img-fluid">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/gift-cart-menu.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">Gift A Cart</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/glass.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">Party Time</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/corporate.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">Corporate Tie Up</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/about.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">About Us</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <!-- <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/my-account.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">My Account</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a> -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="side-menu">
+              <ul class="navbar-nav">
+                <div class="d-flex side-bottom pb-4 ">
+                  <div>
+                    <!-- <img src="images/sidemenuprofile.png" class="img-fluid profile-image"> -->
+                    <img src="images/empty.png" class="img-fluid profile-image">
+                  </div>
+                  <!-- <div class="">
+                    <h1 class="profile-text pl-3 mb-2">Ravina Malik</h1>
+                    <p><span>Click</span> to view or edit account details</p>
+                  </div> -->
+                  <div class="">
+                    <h1 class="profile-text pl-3 mb-2">Welcome!</h1>
+                    <p class="fw-500"><span class="mr-2">Sign In</span> or <span class="ml-2">Sign Up</span></p>
+                  </div>
+                  <img src="images/cross.png" class="img-fluid ml-auto cross">
+                </div>
+                <!-- active  -->
+                <li class="nav-item ">
+                  <a class="nav-link" href="#"><img src="images/gift.png">Gift A Cart</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#"><img src="images/glass.png">Party Time</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#"><img src="images/corporate.png">Corporate Tie Up</a>
+                </li>
+                <li class="nav-item accordion my--account" id="accordionExample">
+                  <div class="card">
+                    <div class="" id="headingTwo">
+                        <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <a class="nav-link" href="#"><img src="images/my-account.png">My Profile</a>
+                        </button>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body pb-0">
+                        <div class="nav-item ">
+                          <a class="nav-link" href="#"><img src="images/clock.png">Order History</a>
+                        </div>
+                        <div class="nav-item ">
+                          <a class="nav-link" href="#"><img src="images/saved-address.png"> Saved Address</a>
+                        </div>
+                        <div class="nav-item ">
+                          <a class="nav-link" href="#"><img src="images/favourites.png"> Favourites</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item  ">
+                  <a class="nav-link" href="#"><img src="images/about.png">About Us</a>
+                </li>
+                <li class="nav-item  ">
+                  <a class="nav-link" href="#"><img src="images/contact.png">Contact Us</a>
+                </li>
+                
+              </ul>
+              <ul class="navbar-nav mb-0 ">
+                <li class="nav-item side-bottom-footer">
+                  <a class="nav-link" href="#"><img src="images/logout.png">Logout</a>
+                </li>
+                <li><a class="terms mb-2" href="#">Terms</a></li>
+                <li><a class="terms mb-2" href="#">Privacy Policy</a></li>
+                <li><a class="version" href="#">Version 0.1.02</a></li>
+              </ul>
+              <div>
+                
+              </div>
+            </div>
+          </div>
+		  	</div>
+        
+           
+		  </nav>
+    </header>
+    <!-- Location Modal -->
+    <div class="location-card">
+      <div class="location-card-overlay"></div>
+      <div class="d-flex">
+        <p class="mr-auto fw-500">Location</p>
+        <div><img class="close-card cursor-pointer" data-dismiss="modal" aria-label="Close" src="images/close.png" alt=""></div>
+      </div>
+      <p class="pr-md-4 pt-3 we_currently">We are currently delivering in Gurugram phase 1 to 5 only*</p>
+      <form class="custom-form mt-3 location-search" action="">
+        <div class="form-group">
+          <input type="text" id="project" class="form-control location_search" placeholder="Enter delivering location">
+          <input type="hidden" id="project-id">
+          <p id="project-description"></p>
+        </div>
+      </form>
+      <div class="d-flex use_currext">
+        <div><img class="" src="images/location-yellow.png"></div>
+        <p>Use Current Location</p>
+      </div>
+      <div class="saved_locations ">
+        <div class="d-flex loc_viewall mb-4 pb-2">
+          <p class="p-sec mr-auto">Select from Saved Locations</p>
+          <a href="#">View All</a>
+        </div>
+        <div class="form-group saved_addresses">
+          <div class="custom-control custom-radio pl-0">
+            <input type="radio" id="savedAddress" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="savedAddress">
+              <div class="d-flex home-address">
+                <div class="mr-2 pr-1"><img src="images/home1.png" alt=""></div>
+                <div>
+                  <p class="fw-600 home">Home</p>
+                  <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="custom-control custom-radio pl-0">
+            <input type="radio" id="savedAddress1" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="savedAddress1">
+              <div class="d-flex home-address">
+                <div class="mr-2 pr-1"><img src="images/work.png" alt=""></div>
+                <div>
+                  <p class="fw-600 home">Work</p>
+                  <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Location Modal -->
+
+    <!-- <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+    <div class="call-icon"><img class="call-ring" src="images/Call Icon.png" alt=""></div>
+    <section class="landing-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 position-relative">
+            <div class="">
+              <img class="img-fluid mlt-truck " src="images/header-mlt.png" alt="">
+              <img class="rect img-fluid" src="images/rect.png" alt="">
+              <img class="triangle img-fluid" src="images/tri-round.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="baking">Baking in a moving car that's our superpower, with a host of mouth watering meals</h2>
+            <a href="listing.html" class="default-btn order-now ">Order online now </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cooking-goods">
+      <div class="container position-relative">
+        <!-- <video width="100%" height="auto" autoplay="true" playsinline="" preload="" muted="">
+          <source
+            src="https://www.foodtechventures.in/wp-content/themes/tweentynineteen-child/assets/images/Cooking On The Go V1.mp4"
+            type="video/mp4">
+        </video> -->
+        <img class="coocking" src="images/coocking-goo.gif" alt="">
+        <div class="mt-3">
+          <p class="cooking pt-4">WITH THE HELP OF A COMPLETELY AUTOMATIC, ROBOTIC COOKING VEHICLE.</p>
+        </div>
+      </div>
+    </section>
+    <section class="delivery-system position-relative">
+      <div class="container">
+        <div class="compare-sys d-flex">
+          <h2 class=" compareee fw-600">
+            Compare the<br>
+            <span class="foood-del">food delivery</span>
+            systems
+          </h2>
+          <div class="line-red"></div>
+        </div>
+        <div class="timeline-slider d-flex">
+          <div class="traditional">
+            <div class="d-flex">
+              <div class=""><img class="scale" src="images/doted.png" alt=""> </div>
+              <div class="track-wrap">
+                <div class="track">
+                  <span id="white-round" class="white-round">
+                    <div class="knob"></div>
+                  </span>
+                </div>
+
+                <div class="traditional-food">
+                  <h3 class="food-dely">Traditional <br>food delivery</h3>
+                  <p class="pizza-prep"> Pizza is prepared and cooked at a kitchen itself</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mlt-delivery">
+            <div class="d-flex">
+              <div class="scale"><img class="scale" src="images/doted.png" alt=""> </div>
+              <div class="track-wrap">
+                <div class="track">
+                  <span class="white-round" style="transform: rotate(19.5046deg);">
+                    <div class="knob"></div>
+                  </span>
+                </div>
+                <div class="traditional-food">
+                  <h3 class="food-dely">MLT<br>food delivery</h3>
+                  <p class="fresh-kitchen">Fresh ingredients are prepared at a central kitchen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  
+      <section class="foooood-tabs">
+          <div class="container">
+            <div class="tabs-scroll">
+              <ul class="nav nav-tabs row" id="myTab" role="tablist">
+                <li class="nav-item col-2" role="presentation">
+                  <a href="listing.html" class="nav-link border-0" ><div class=""> <img class="items-food " src="images/pizza.png" alt=""> </div><p class="food-items fs-20 mt-md-4">Pizza</p> </a>
+                </li>
+                <li class="nav-item col-2" role="presentation">
+                  <a class="nav-link border-0" href="listing.html"><div><img class="items-food " src="images/sides.png" alt=""></div><p class="food-items fs-20 mt-md-4">Sides</p> </a>
+                </li>
+                <li class="nav-item col-2" role="presentation">
+                  <a class="nav-link border-0" href="listing.html"><div><img class="items-food " src="images/salads.png" alt=""></div><p class="food-items fs-20 mt-md-4">salads</p> </a>
+                </li>
+                <li class="nav-item col-2" role="presentation">
+                  <a class="nav-link border-0" href="listing.html"><div><img class="items-food " src="images/dips.png" alt=""></div><p class="food-items fs-20 mt-md-4">dips</p> </a>
+                </li>
+                <li class="nav-item col-2" role="presentation">
+                  <a class="nav-link border-0" href="listing.html"><div><img class="items-food " src="images/desserts.png" alt=""></div><p class="food-items fs-20 mt-md-4">desserts</p> </a>
+                </li>
+                <li class="nav-item col-2" role="presentation">
+                  <a class="nav-link border-0" href="listing.html"><div><img class="items-food " src="images/sides.png" alt=""></div><p class="food-items fs-20 mt-md-4">drinks</p> </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </section>
+      <section class="our-menu">
+        <div class="container">
+          <div class="media menu-banner">
+            <img class="discover-menu img-fluid" src="images/our-menu.png" alt="">
+            <div class="media-body explore-ranges">
+              <div class="d-flex">
+                <div class="cut-pizza"><img src="images/cut-pizza.png" alt=""></div>
+                <h5 class="menu">Our Menu</h5>
+              </div>
+              <p class="delicious-ranges">Explore our range of delicious pizzas, sides, salads, drinks and many more...
+              </p>
+              <a href="listing.html" class="btn-yellow ">Discover Menu</a>
+            </div>
+          </div>
+  
+          <div class="media  menu-banner  flex-md-row-reverse">
+            <img class="discover-menu img-fluid"src="images/tie-up.png" alt="">
+            <div class="media-body explore-ranges">
+              <div class="d-flex ">
+                <div class="gift"><img src="images/Corporate tie up.png" alt=""></div>
+                <h5 class="menu">Corporate Tie Up</h5>
+              </div>
+              <p class="delicious-ranges">Sign your business up for a corporate account and get access to special pricing,
+                priority delivery & much more...</p>
+              <a href="#" class="btn-yellow">learn more about tie up</a>
+            </div>
+          
+          </div>
+  
+          <div class="media menu-banner">
+            <img class="discover-menu img-fluid" src="images/gift-cart.png" alt="">
+            <div class="media-body explore-ranges">
+              <div class="d-flex">
+                <div class="cut-pizza"><img src="images/gift-box.png" alt=""></div>
+                <h5 class="menu">Gift A Cart</h5>
+              </div>
+              <p class="delicious-ranges">Surprise upto 3 friends and/or family with an MLT experience! Our treat, from
+                you to them!</p>
+              <a href="#" class="btn-yellow">Gift a cart now</a>
+            </div>
+          </div>
+  
+          <div class="media  party-time flex-md-row-reverse">
+            <img class="discover-menu img-fluid" src="images/party-time.png" alt="">
+            <div class="media-body explore-ranges">
+              <div class="d-flex ">
+                <div class="gift"><img src="images/party-glass.png" alt=""></div>
+                <h5 class="menu">Party Time</h5>
+              </div>
+              <p class="delicious-ranges">Got a special occasion? hire our pizza truck and let us work our gourmet magic while
+                you celebrate!</p>
+              <a href="#" class="btn-yellow">book for party now</a>
+            </div>
+            
+          </div>
+  
+        </div>
+      </section>
+ 
+    
+    <section class="Currently-dely">
+      <div class="container">
+        <div class="best-work mb-md-5">
+          <p class="phases mb-3">Currently delivering in DLF Phase 1 to 5, Gurgaon at the moment. </p>
+          <p class="ring-us mb-3">Please ring us on <a class="number" href="#"> <u> 9292925353</u> </a> If you
+            arevisiting from any one of other Gurgaon areas. We will do our best to work something out! </p>
+          <p class="visit-outside">If visiting from outside of Gurgaon, watch this space, as we are working extra hardto
+            come to your city soon!🤗 🍕</p>
+        </div>
+        <div class="order-online"> <a href="listing.html" class="default-btn fs-20 online-now ">Order online now</a></div>
+      </div>
+    </section>
+    <section class=" app-store position-relative">
+      <div class="container">
+        <div class="row get-it mx-0 md-0">
+          <div class="col-md-6 our-app">
+            <div class="">
+              <h2 class="down-load">Download our app</h2>
+            </div>
+            <div class="d-flex">
+              <img class="mr-md-4 googlee-appp" src="images/gooogle-play.png" alt="">
+              <img class="googlee-appp" src="images/app-store.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="phone-image">
+              <img class="mobile-picc" src="images/mobile-pic.png" alt="">
+
+            </div>
+            <div class="">
+              <img class="color-trinagle" src="images/color-tri.png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    
+
+    <footer>
+      <div class="footer_sec">
+        <div class="container">
+          <div class="row mw-1000">
+            <div class="col-md-6">
+              <div class="img_col">
+                <div class="d-flex mb-5">
+                  <div class="img_text">
+                    <img src="images/yellow.png" class="immg-fluid">
+                    <h6>Win</h6>
+                  </div>
+                  <div class="img_para">
+                    <p>Describe our concept in 100 words and win a meal for yourself and your loved one.</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-5">
+                  <div class="img_text">
+                    <img src="images/red.png" class="immg-fluid">
+                    <h6>Rate</h6>
+                  </div>
+                  <div class="img_para">
+                    <p>Rate your favourite Pizza so we can surprise you when you’re feeling low</p>
+                  </div>
+                </div>
+                <div class="d-flex win-rate ">
+                  <div class="img_text">
+                    <img src="images/blue.png" class="immg-fluid">
+                    <h6>Share</h6>
+                  </div>
+                  <div class="img_para">
+                    <p>Sharing with loved ones is the best thing there can be. Let’s share Love & Pizzas.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 link-giftss">
+              <div class="row">
+                <div class="col-md-6 col-5">
+                  <ul class="links">
+                    <h6>Links</h6>
+                    <li>Gift A Cart</li>
+                    <li>Party Time</li>
+                    <li>About Us</li>
+                    <li>Covid Shield</li>
+                  </ul>
+
+                </div>
+                <div class="col-md-6 col-6">
+                  <ul class="links">
+                    <h6>Reach Us</h6>
+                    <li><a href= "">+91 9292925353</a></li>
+                    <li><a href="">hi@mylovetriangle.pizza</a></li>
+                    <li class="social_links">
+                      <a href=" "><img src="images/fb.png" class="img-fluid"></a>
+                      <a href=" "><img src="images/insta.png" class="img-fluid"></a>
+                      <a href=" "><img src="images/whatsapp.png" class="img-fluid"></a>		
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex">
+                <input type="text" class="deliver_srch" placeholder="Get Goodness Delivered">
+                <button type="button" class="subscribe_btn default-btn">Subscribe</button>
+              </div> 				
+            </div>
+          </div>
+        </div>
+        <div class="links_sec"></div>
+      </div>
+      <div class="baking_sec">
+        <div class="container">
+          <div class="row mw-1000 bdr--btm">
+            <div class="col-md-7 baking_text d-md-flex">
+              <div>
+                <span>Baking</span>
+                <h3 >in a moving car</h3>
+              </div>
+              <div class="baking_word">	
+                <h3>that’s our</h3>
+                <span>Superpower</span>
+                </div>
+            </div>
+            <div class="col-md-5">
+              <!-- <img src="images/truck_before.png" class="img-fluid truck_before"> -->
+              <div class="position-relative truck_footer">
+                <img src="images/footer_truck.png" class="img-fluid  ">
+              </div>	
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="row mw-1000">
+            <div class="col-md-6">
+              <a href=" ">Copyrights © 2021 @mylovetriangle</a>
+            </div>
+            <div class="col-md-4 col-6">
+              <a href=" ">terms & Conditions</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <a href="">privacy policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- LogIn Modal -->
+<div class="modal fade login-view" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form class="custom-form formvalidation">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <p class="sign mb-4 ">sign in</p>
+          <!-- <p class="already-in">Already have an account?<a class="in" href="#"> Sign In </a></p> -->
+          <p class="already-in ">New User?<a class="in opensignupmodal" href="javascript:void(0)"  data-toggle="modal" data-target="#signupmodal"> Sign Up </a></p>
+          <div class="form-group position-relative number_valid country-code">
+            <label>Enter your mobile number</label>
+            <input type="text" class="form-control log-inn restrict_alphabits" name="mobile" id="mobile" maxlength="10" minlength="10" placeholder="9933554488" autocomplete="off" required>
+            <span class="validity"></span>
+            <p>+91</p>
+          </div>
+            <!-- <p class="verification-code mt-2 ">We have sent the OTP to your mobile number</p>
+            <div class="form-group">
+              <label class="otp ">Enter OTP</label>
+              <div class="d-flex ">
+                <input type="number" class="form-control inputs mt-2 mr-3" id="number11" name="number11" maxlength="1">
+                <input type="number" class="form-control inputs  mt-2 mr-3" id="number21" name="number21" maxlength="1">
+                <input type="number" class="form-control inputs  mt-2 mr-3" id="number31" name="number31" maxlength="1">
+                <input type="number" class="form-control inputs  mt-2 " id="number41" name="number41" maxlength="1">
+              </div>
+              <p class=" mt-3 "><a class="resend--otp" href="javascript:void(0)">Resend OTP</a></p>
+            </div> -->
+          
+          <button type="submit" class="default-btn proceed">Proceed</button>
+          <button type="submit" class="default-btn logIn">Log In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Otp Modal -->
+ <div class="modal fade login-view otp-view" id="otpmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form class="custom-form formvalidation">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <p class="sign mb-4 ">Verify Number</p>          
+            <!-- <p class="verification-code mt-2 ">We have sent the OTP to your mobile number</p> -->
+            <p class="p-sec mb-2 pb-md-1">We have sent the OTP to </p>
+            <div class="d-flex mb-4 ">
+              <p class="saved-number p-sec fw-500"><span>+91</span> 8959494988</p>
+              <div class="d-flex ml-2 mt-1 pl-md-1 edit-num cursor-pointer">
+                <div class="mr-2"><img src="images/edit-green.png" alt=""></div>
+                <p class="p-sec">Edit</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="otp ">Enter OTP</label>
+              <div class="d-flex ">
+                <input type="number" class="form-control inputs mt-2 mr-3" id="number11" name="number11" maxlength="1">
+                <input type="number" class="form-control inputs  mt-2 mr-3" id="number21" name="number21" maxlength="1">
+                <input type="number" class="form-control inputs  mt-2 mr-3" id="number31" name="number31" maxlength="1">
+                <input type="number" class="form-control inputs  mt-2 " id="number41" name="number41" maxlength="1">
+              </div>
+              <p class=" mt-3 "><a class="resend--otp" href="javascript:void(0)">Resend OTP</a></p>
+            </div>
+          
+          <button type="submit" class="default-btn" disabled>Proceed</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SingnUp Modal -->
+<div class="modal fade signup-view" id="signupmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body ">
+        <form class="custom-form formvalidation">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <p class="sign mb-3 ">sign up</p>
+          <p class="already-in mb-4">Already have an account?<a class="in openloginmodal" href="#"> Sign In </a></p>
+
+          <div class="form-group name_field">
+            <label>Name*</label>
+            <input type="name" class="form-control" name="name" id="name" placeholder="marshal matthel" data-bv-notempty-message="Please enter name" required autocomplete="off">
+          </div>
+
+          <div class="form-group email_field">
+            <label>Email*</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="abc@xyz.com" required autocomplete="off">
+          </div>
+
+          <div class="form-group num_field">
+            <label>Enter your mobile number</label>
+            <input type="text" class="form-control restrict_alphabits" name="mobile" id="mobile" placeholder="9535113232" maxlength="10" minlenght="10" required autocomplete="off">
+          </div>
+          <div class="open_otp">
+            <p class="verification-code">We have sent the OTP to your mobile number</p>
+            <div class="form-group">
+              <label class="otp ">Enter OTP</label>
+              <div class="d-flex ">
+                <input type="number" class="form-control inputs mt-2 mr-3" id="number1" name="number1" maxlength="1">
+                <input type="number" class="form-control inputs mt-2 mr-3" id="number1" name="number1" maxlength="1">
+                <input type="number" class="form-control inputs mt-2 mr-3" id="number1" name="number1" maxlength="1">
+                <input type="number" class="form-control inputs mt-2" id="number1" name="number1" maxlength="1">
+              </div>
+              <p class=" mt-3 "><a class="resend--otp" href="javascript:void(0)">Resend OTP</a></p>
+            </div>
+          </div>
+          <button type="submit" class="default-btn SignUp">Sign Up</button>
+        <!--- <p class="mt-4 mb-4 orr">or</p>
+          <p class=" vth-mails">Sign In with</p>
+          <div class="mt-4 mb-5 social-media">
+            <a href="#"> <img class="mr-3" src="images/mail.png" alt=""></a>
+            <a href="#"> <img src="images/facebook.png" alt=""></a>
+          </div>-->
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrapValidator.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>  
+  <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
+  <script src="js/custom.js"></script>
+
+<script>
+  $( function() {
+    var projects = [
+      {
+        value: "Arjun",
+        label: "HSR Layout",
+        desc: "Bengaluru, Karnataka, India",
+      },
+      {
+        value: "Reddy",
+        label: "HSR BDA Complex",
+        desc: "Agara Lake, Sector 6, HSR Layout, Bengaluru, Karnataka, India",
+      },
+      {
+        value: "sizzlejs",
+        label: "HSR Layout Police Station",
+        desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+      }
+    ];
+ 
+    $( "#project" ).autocomplete({
+      minLength: 0,
+      source: projects,
+      focus: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        return false;
+      },
+      select: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        $( "#project-id" ).val( ui.item.value );
+        $( "#project-description" ).html( ui.item.desc );
+        // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+        return false;
+      }
+    })
+    .autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+        .append( "<div>" + "<p>" + item.label + "</p>"  + "<span>" + item.desc + "</span>" + "</div>" )
+        .appendTo( ul );
+    };
+
+  });
+  </script>
+
+</body>
+
+</html>

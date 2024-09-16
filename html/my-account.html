@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<title>My account</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header_sec">
+            <nav class="navbar navbar-expand-lg navbar-light header_color px-md-0">
+                <div class="container">
+              <img src="images/logo.png" class="img-fluid logo_img">
+              <div class="d--none">
+                <div class="d-flex address_info">
+                  <img src="images/location.png" class="img-fluid">
+                  <span>Home</span>
+                  <p>Tower-A, Flat no. 854,...</p>
+                </div>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="images/Hamburger.png">
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="desktop-menu ml-auto">
+                  <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Corporate Tie Up <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link ml-5" href="#">Party Time</a>
+                    </li>
+                    <li class="nav-item">
+                      <button class="btn btn_signin" type="button" data-toggle="modal" data-target="#loginmodal">Sign In</button>
+                    </li>
+                    <li class="nav-item">
+                      <a href=""><img src="images/Hamburger.png" class="img-fluid"></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="side-menu">
+                  <ul class="navbar-nav">
+                    <div class="d-flex side-bottom pb-4 ">
+                      <div><img src="images/sidemenuprofile.png" class="img-fluid profile-image"></div>
+                      <div class="">
+                        <h1 class="profile-text pl-3 mb-2">Ravina Malik</h1>
+                        <p>Your account details and settings</p>
+                      </div>
+                      <img src="images/cross.png" class="img-fluid ml-auto cross">
+                    </div>
+      
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/heart.png"> Favourites</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/clock.png">Order History</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/gift.png">Gift A Cart</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/glass.png">Party Time</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/corporate.png">Corporate Tie Up</a>
+                    </li>
+                    <li class="nav-item active ">
+                      <a class="nav-link" href="#"><img src="images/profile.png">My Profile</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link ml-5" href="#">Logout</a>
+                    </li>
+                    <li class="nav-item  ">
+                      <a class="nav-link" href="#"><img src="images/about.png">About Us</a>
+                    </li>
+                    <li class="nav-item  side-bottom-footer">
+                      <a class="nav-link" href="#"><img src="images/contact.png">Contact Us</a>
+                    </li>
+                  </ul>
+                  <div>
+                    <div><a class="terms mb-2" href="#">Terms</a></div>
+                    <div><a class="terms mb-2" href="#">Privacy Policy</a></div>
+                    <div><a class="version" href="#">Version 0.1.02</a></div>
+                  </div>
+                </div>
+              </div>
+                  </div>
+              </nav>
+        </header>
+        <section class="my-accountt">
+            <div class="container">
+                <div class="d-flex account-my">
+                    <span class="fs-18 fw-600 my-acc">My Account</span>
+                    <a class="d-flex" href="#">
+                        <img class="img-fluid edit-my" src="images/edit.png" alt="">
+                        <p class="edit-acc fw-500">Edit</p>
+                    </a>
+                </div>
+                <h4 class="helo-mig fw-500">Hello Miguel,</h4>
+                <div class="d-flex log-acc">
+                    <p class="phn-number fw-500">+91 7548962645</p>
+                    <img class="img-fluid dott" src="images/dott.png" alt="">
+                    <p class="mail-design fw-500 mr-auto">abdulqadir@onething.design</p>
+                    <a class=" d-flex " href="#">
+                        <img class="img-fluid lg-out" src="images/lg-out.png" alt="">
+                        <p class=" p-sec fw-400 log-out">Logout</p>
+                    </a>
+                </div>
+                <div class="order-fav  row mx-md-0">
+                    <div class="col-md-6">
+                        <a class=" d-flex timer" href="#">
+                            <img class="img-fluid timer-fav" src="images/timer.png" alt="">
+                            <p class="fs-20">Your Orders</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class=" d-flex " href="#">
+                            <img class="img-fluid fav-love" src="images/fav.png" alt="">
+                            <p class="fs-20">favourites</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class=" d-flex " href="#">
+                            <img class="img-fluid saved-add" src="images/saved.png" alt="">
+                            <p class="fs-20">Saved Address</p>
+                        </a>
+                    </div>
+                </div>
+           </div>
+       </section>
+       <section class=" app-store account-page position-relative">
+            <div class="container">
+                <div class="row get-it mx-0 md-0">
+                    <div class="col-md-6 our-app">
+                        <div class="">
+                            <h2 class="down-load">Download our app</h2>
+                        </div>
+                        <div class="d-flex">
+                            <img class="mr-md-4 googlee-appp" src="images/gooogle-play.png" alt="">
+                            <img class="googlee-appp" src="images/app-store.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="phone-image">
+                            <img class="mobile-picc" src="images/mobile-pic.png" alt="">
+                        </div>
+                        <div class="">
+                            <img class="color-trinagle" src="images/color-tri.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </section>
+      <footer>
+        <div class="footer_sec">
+          <div class="container">
+            <div class="row mw-1000">
+              <div class="col-md-6">
+                <div class="img_col">
+                  <div class="d-flex mb-5">
+                    <div class="img_text">
+                      <img src="images/yellow.png" class="immg-fluid">
+                      <h6>Win</h6>
+                    </div>
+                    <div class="img_para">
+                      <p>Describe our concept in 100 words and win a meal for yourself and your loved one.</p>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-5">
+                    <div class="img_text">
+                      <img src="images/red.png" class="immg-fluid">
+                      <h6>Rate</h6>
+                    </div>
+                    <div class="img_para">
+                      <p>Rate your favourite Pizza so we can surprise you when you’re feeling low</p>
+                    </div>
+                  </div>
+                  <div class="d-flex ">
+                    <div class="img_text">
+                      <img src="images/blue.png" class="immg-fluid">
+                      <h6>Share</h6>
+                    </div>
+                    <div class="img_para">
+                      <p>Sharing with loved ones is the best thing there can be. Let’s share Love & Pizzas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="links">
+                      <h6>Links</h6>
+                      <li>Gift A Cart</li>
+                      <li>Party Time</li>
+                      <li>About Us</li>
+                      <li>Covid Shield</li>
+                    </ul>
+  
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="links">
+                      <h6>Reach Us</h6>
+                      <li><a href= "">+91 9292925353</a></li>
+                      <li><a href="">hi@mylovetriangle.pizza</a></li>
+                      <li class="social_links">
+                        <a href=" "><img src="images/fb.png" class="img-fluid"></a>
+                        <a href=" "><img src="images/insta.png" class="img-fluid"></a>
+                        <a href=" "><img src="images/whatsapp.png" class="img-fluid"></a>		
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <input type="text" class="deliver_srch" placeholder="Get Goodness Delivered">
+                  <button type="button" class="subscribe_btn">Subscribe</button>
+                </div> 				
+              </div>
+            </div>
+          </div>
+          <div class="links_sec"></div>
+        </div>
+        <div class="baking_sec">
+          <div class="container">
+            <div class="row mw-1000 bdr--btm">
+              <div class="col-md-7 baking_text">
+                <div>
+                  <span>Baking</span>
+                  <h3>in a moving car</h3>
+                </div>
+                <div class="baking_word">	
+                  <h3>that’s our</h3>
+                  <span>Superpower</span>
+                  </div>
+              </div>
+              <div class="col-md-5">
+                <!-- <img src="images/truck_before.png" class="img-fluid truck_before"> -->
+                <div class="position-relative truck_footer">
+                  <img src="images/footer_truck.png" class="img-fluid  ">
+                </div>	
+              </div>
+            </div>
+        </div>
+        </div>
+        <div class="copyright">
+          <div class="container">
+            <div class="row mw-1000">
+              <div class="col-md-6">
+                <a href=" ">Copyrights © 2021 @mylovetriangle</a>
+              </div>
+              <div class="col-md-4">
+                <a href=" ">terms & Conditions</a>
+              </div>
+              <div class="col-md-2">
+                <a href="">privacy policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+   </div>
+
+         <!-- LogIn Modal -->
+<div class="modal fade login-view otp-view" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="custom-form formvalidation">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p class="sign mb-4 ">sign in</p>
+            <!-- <p class="already-in">Already have an account?<a class="in" href="#"> Sign In </a></p> -->
+            <p class="already-in ">New User?<a class="in opensignupmodal" href="javascript:void(0)"  data-toggle="modal" data-target="#signupmodal"> Sign Up </a></p>
+            <div class="form-group position-relative number_valid country-code">
+              <label>Enter your mobile number</label>
+              <input type="text" class="form-control log-inn restrict_alphabits" name="mobile" id="mobile" maxlength="10" minlength="10" placeholder="9933554488" autocomplete="off" required>
+              <span class="validity"></span>
+              <p>+91</p>
+            </div>
+              <!-- <p class="verification-code mt-2 ">We have sent the OTP to your mobile number</p>
+              <div class="form-group">
+                <label class="otp ">Enter OTP</label>
+                <div class="d-flex ">
+                  <input type="number" class="form-control inputs mt-2 mr-3" id="number11" name="number11" maxlength="1">
+                  <input type="number" class="form-control inputs  mt-2 mr-3" id="number21" name="number21" maxlength="1">
+                  <input type="number" class="form-control inputs  mt-2 mr-3" id="number31" name="number31" maxlength="1">
+                  <input type="number" class="form-control inputs  mt-2 " id="number41" name="number41" maxlength="1">
+                </div>
+                <p class=" mt-3 "><a class="resend--otp" href="javascript:void(0)">Resend OTP</a></p>
+              </div> -->
+            
+            <button type="submit" class="default-btn proceed">Proceed</button>
+            <button type="submit" class="default-btn logIn">Log In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   <!-- Otp Modal -->
+   <div class="modal fade login-view otp-view" id="otpmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="custom-form formvalidation">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p class="sign mb-4 ">Verify Number</p>          
+              <!-- <p class="verification-code mt-2 ">We have sent the OTP to your mobile number</p> -->
+              <div class="form-group">
+                <label class="otp ">Enter OTP</label>
+                <div class="d-flex ">
+                  <input type="number" class="form-control inputs mt-2 mr-3" id="number11" name="number11" maxlength="1">
+                  <input type="number" class="form-control inputs  mt-2 mr-3" id="number21" name="number21" maxlength="1">
+                  <input type="number" class="form-control inputs  mt-2 mr-3" id="number31" name="number31" maxlength="1">
+                  <input type="number" class="form-control inputs  mt-2 " id="number41" name="number41" maxlength="1">
+                </div>
+                <p class=" mt-3 "><a class="resend--otp" href="javascript:void(0)">Resend OTP</a></p>
+              </div>
+            
+            <button type="submit" class="default-btn" disabled>Proceed</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- SingnUp Modal -->
+  <div class="modal fade signup-view" id="signupmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body ">
+          <form class="custom-form formvalidation">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p class="sign mb-3 ">sign up</p>
+            <p class="already-in mb-4">Already have an account?<a class="in openloginmodal" href="#"> Sign In </a></p>
+  
+            <div class="form-group name_field">
+              <label>Name*</label>
+              <input type="name" class="form-control" name="name" id="name" placeholder="marshal matthel" data-bv-notempty-message="Please enter name" required autocomplete="off">
+            </div>
+  
+            <div class="form-group email_field">
+              <label>Email*</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="abc@xyz.com" required autocomplete="off">
+            </div>
+  
+            <div class="form-group num_field">
+              <label>Enter your mobile number</label>
+              <input type="text" class="form-control restrict_alphabits" name="mobile" id="mobile" placeholder="9535113232" maxlength="10" minlenght="10" required autocomplete="off">
+            </div>
+            <div class="open_otp">
+              <p class="verification-code">We have sent the OTP to your mobile number</p>
+              <div class="form-group">
+                <label class="otp ">Enter OTP</label>
+                <div class="d-flex ">
+                  <input type="number" class="form-control inputs mt-2 mr-3" id="number1" name="number1" maxlength="1">
+                  <input type="number" class="form-control inputs mt-2 mr-3" id="number1" name="number1" maxlength="1">
+                  <input type="number" class="form-control inputs mt-2 mr-3" id="number1" name="number1" maxlength="1">
+                  <input type="number" class="form-control inputs mt-2" id="number1" name="number1" maxlength="1">
+                </div>
+                <p class=" mt-3 "><a class="resend--otp" href="javascript:void(0)">Resend OTP</a></p>
+              </div>
+            </div>
+            <button type="submit" class="default-btn SignUp">Sign Up</button>
+          <!--- <p class="mt-4 mb-4 orr">or</p>
+            <p class=" vth-mails">Sign In with</p>
+            <div class="mt-4 mb-5 social-media">
+              <a href="#"> <img class="mr-3" src="images/mail.png" alt=""></a>
+              <a href="#"> <img src="images/facebook.png" alt=""></a>
+            </div>-->
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrapValidator.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/custom.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<style>
+    .simple-rater-overflow-variant{width: 200px;}
+
+    .edit-orders .modal-dialog{width: 100%;max-width: 659px;}
+    .edit-orders .modal-content{background: #0A100D;border-radius: 32px;box-shadow: 8px 4px 24px rgba(0, 0, 0, 0.28);padding: 64px 40px;}
+    .edit-orders .close{width: 20px;height: 20px;color: #FFFFFF;font-size: 20px;font-weight: 100;}
+    .edit-orders h5{color: #5FC2AE;letter-spacing: 1px;text-transform: uppercase;line-height: 1.57;padding-bottom: 27px;}
+
+     .edit-orders .birthday-txt{color: #FFFFFA;text-transform: uppercase;letter-spacing: 1px;}
+     .edit-orders  .birthday-event .card{background: rgba(255, 255, 250, 0.1);border-radius: 12px;}
+     .edit-orders  .birthday-event .card-header{background: rgba(255, 255, 255, 0.05);border-radius: 12px 12px 0 0;padding: 16px 24px 12px 24px;}
+     .edit-orders   .edit-txt{color: #5FC2AE;line-height: 1.37;padding-left: 10.44px;}
+     .edit-orders  .birthday-event .card-body{padding: 29px 24px 35px 24px;}
+     .edit-orders  .birthday-list{color: rgba(255, 255, 255, 0.87);line-height: 1.37;}
+     .edit-orders   .birthday-list-yellow{color: #E0AF02;line-height: 1.37;}
+     .edit-orders  .line{border: 0;}
+     .edit-orders   .line::after{content: ''; border-right: 1px solid #FFFFFF;top: 0;height:70px;position: absolute;right: 0;}
+
+
+     .edit-orders  .birthday-coupon-page{padding: 40px 0 50px 0;}
+     .edit-orders  .edits{color: #5FC2AE;padding-left: 5.47px;line-height: 1.71;padding-top: 2px;}
+     .edit-orders   .spice-bot{border-bottom: 0.2px solid #FFFFFF;}
+     .edit-orders   .birthday-coupon-page .card-text{color: rgba(255, 255, 250, 0.6);font-size: 14px;font-weight: 300;line-height: 1.57;width: 100%;max-width: 500px;}
+     .edit-orders  .card-bor{border-bottom:1px solid rgba(255, 255, 250, 0.08);}
+     .edit-orders  .birthday-coupon-page .tab-title {color: #FFFFFF;font-size: 16px;line-height: 1.37;padding-right: 31.34px;}
+     .edit-orders   .birthday-coupon-page .tab-title.active{color: #E0AF02;}
+     .edit-orders   .birthday-coupon-page .tab-title .active img{transform: rotateX(180deg);transition-duration: 0.5s;}
+     .edit-orders  .fixed-menu{overflow-x: hidden;flex-wrap: inherit;white-space: nowrap;padding-bottom: 10px;}
+     .edit-orders  .birthday-coupon-page .card-text{padding-left: 24px;}
+
+     .order-detail-menu .modal-dialog{width: 100%;max-width: 659px;}
+     .order-detail-menu .modal-content{background: #0A100D;border-radius: 32px;box-shadow: 8px 4px 24px rgba(0, 0, 0, 0.28);padding: 64px 40px;}
+     .order-detail-menu .close{width: 20px;height: 20px;color: #FFFFFF;font-size: 20px;font-weight: 100;}
+     .order-detail-menu h5{color: #5FC2AE;letter-spacing: 1px;text-transform: uppercase;line-height: 1.57;padding-bottom: 27px;}
+
+        @media only screen and (max-width: 767px) {  
+            .edit-orders .modal-content{padding: 20px 0;}
+            .edit-orders  .fixed-menu{overflow-x: scroll;}
+            .edit-orders .birthday-coupon-page .card-text{padding-left: 0 !important;font-size: 12px;width: 100%;max-width: 320px;-}
+            .edit-orders  .birthday-coupon-page .img-txt-pad{margin-top: 15px;}
+            .edit-orders .cardpiza{margin-bottom: 0;}
+
+            .edit-orders  .birthday-txt{font-size: 14px;}
+            .edit-orders .edit-img{width: 20px;}
+            .edit-orders .edit-txt{font-size: 12px;margin-top: 5px;}
+            .edit-orders  .birthday-event .card-body{padding:  24px 16px;}
+            .edit-orders .birthday-coupon-page .tab-title{font-size: 14px;}
+            .edit-orders  .birthday-coupon-page p{font-size: 14px;margin-bottom: 15px !important;}
+            .edit-orders  .birthday-coupon-page .card-content{padding: 21px 16px 24px 16px;}
+            .edit-orders  .birthday-coupon-page{padding: 0;}
+            .edit-orders .birthday-event .card-header{padding: 14px 16px;}
+            .edit-orders .edi_text{font-size: 14px;margin-bottom: 15px !important;}
+            .edit-orders .birthday-coupon-page  .card-bg{padding: 15px 18px 12px 18px;}
+
+            .order--placed{margin-bottom: 24px;}
+
+        }
+</style>
+
+<title>Order-Detail</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="">
+            <div class="container">
+                <p class="fs-18 fw-600 ordr-hisotry">Order History</p>
+                <div class="card mlt-histryy">
+                    <div class="ordr-mlt-histry d-flex">
+                        <p class="p-sec fw-600 order-numberr mr-auto">Order #455473</p>
+                        <p class="deliver-hisrty">Delivered</p>
+                    <div>   <img class="img-fluid blue-tickk" src="images/blue-tick.png" alt=""></div>
+                        
+                    </div>
+                    <div class="dish-products">
+                        <p class="twoo-products">2 Items</p>
+                            <div class="row">
+                                <ul class="col-md-7 ">
+                                    <li class="lia-italy fw-600 mt-md-3 d-flex" >
+                                        <p class="mr-auto">1 x LIA <span class="italiaaa">- Italia</span> </p> </p>
+                                        <p class="fw-500 dish-cost">₹485</p>
+                                    </li>
+                                    <li class="lia-italy fw-600 mt-2 d-flex" >
+                                        <p class="mr-auto">1 x MGR <span class="italiaaa">- Margherita</span> </p> </p>
+                                        <p class="fw-500 dish-cost">₹485</p>
+                                    </li>
+                                </ul>
+                                <div class="col-md-5 d-none d-md-block  align-self-center ordering-detalis ">
+                                    <div class=" d-flex justify-content-md-end ">
+                                        <div class="reorder-detalis">  <a class="default-btn dish-details p-sec " href="#">View Order Details</a></div>
+                                        <div>  <a class="default-btn dish-details dish-reorder p-sec " href="#">Reorder</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="jun-amt pt-md-4 pt-3">Order Placed on 30 Jun 2021 for Amount <a class="twel-hundred" href="#"> Rs. 1200</a></p>
+                                <div class=" col-md-5 d-md-none d-block align-self-center ordering-detalis ">
+                                    <div class=" d-flex justify-content-md-end  ">
+                                        <div class="reorder-detalis">  <a class="default-btn dish-details p-sec " href="#">View Order Details</a></div>
+                                        <div>  <a class="default-btn dish-details dish-reorder p-sec " href="#">Reorder</a></div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class="card mlt-histryy mt-4">
+                    <div class="ordr-mlt-histry d-flex">
+                        <p class="p-sec fw-600 order-numberr mr-auto">Order #455473</p>
+                        <p class="deliver-hisrty">Delivered</p>
+                    <div>   <img class="img-fluid blue-tickk" src="images/blue-tick.png" alt=""></div>
+                        
+                    </div>
+                    <div class="dish-products">
+                        <p class="twoo-products">2 Items</p>
+                            <div class="row">
+                                <ul class="col-md-7 ">
+                                    <li class="lia-italy fw-600 mt-3 d-flex" >
+                                        <p class="mr-auto">1 x LIA <span class="italiaaa">- Italia</span> </p> </p>
+                                        <p class="fw-500 dish-cost">₹485</p>
+                                    </li>
+                                    <li class="lia-italy fw-600 mt-2 d-flex" >
+                                        <p class="mr-auto">1 x MGR  <span class="italiaaa">- Margherita</span> </p> </p>
+                                        <p class="fw-500 dish-cost">₹485</p>
+                                    </li>
+                                </ul>
+                                <div class="col-md-5 d-none d-md-block  align-self-center  ordering-detalis">
+                                    <div class=" d-flex  justify-content-md-end  ">
+                                        <div class="reorder-detalis">  <a class="default-btn dish-details p-sec " href= "#">View Order Details</a></div>
+                                        <div>  <a class="default-btn dish-details dish-reorder p-sec " href="#">Reorder</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="jun-amt pt-md-4 pt-3">Order Placed on 30 Jun 2021 for Amount <a class="twel-hundred" href="#"> Rs. 1200</a></p>
+                                <div class=" col-md-5 d-md-none d-block align-self-center  ordering-detalis">
+                                    <div class=" d-flex justify-content-md-end  ">
+                                        <div class="reorder-detalis">  <a class="default-btn dish-details p-sec " href="#">View Order Details</a></div>
+                                        <div>  <a class="default-btn dish-details dish-reorder p-sec " href="#">Reorder</a></div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class="card mlt-histryy histry--complete mt-4 mb-4">
+                    <div class="complet-histry d-flex">
+                        <p class="p-sec fw-600 order-numberr ">Birthday</p>
+                        <button class="default-btn party-histry  mr-auto">Party </button>
+                        <p class="deliver-hisrty compllet-histr">COMPLETED</p>
+                    <div>   <img class="img-fluid blue-tickk" src="images/white-tickk.png" alt=""></div>
+                        
+                    </div>
+                    <div class="spice-products ">
+                        <div class="d-flex pb-md-4">
+                            <p class="spice-itt mr-auto">SPICE IT UP’</p>
+                            <div class="d-none d-md-block">
+                                <div class=" d-flex  ">
+                                        <div class="reorder-detalis">  <a class="default-btn spicee-details p-sec " href="#">View Order Details</a></div>
+                                        <div>  <a class="default-btn spicee-details spice-reorder p-sec " href="#">Reorder</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="spicee-amt pt-md-4 fw-600">Order Placed on 30 Jun 2021 for Amount <a class="twel-hundred" href="#"> Rs. 72000</a></p>
+                            <div class="d-md-none d-block">
+                                <div class=" d-flex  ">
+                                        <div class="reorder-detalis">  <a class="default-btn spicee-details p-sec " href="#">View Order Details</a></div>
+                                        <div>  <a class="default-btn spicee-details spice-reorder p-sec " href="#">Reorder</a></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#order-details">
+                Order-Details
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade details-order" id="order-details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h class="modal-title" id="exampleModalLabel">ORDER DETAILS</h>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <div class="card order--placed">
+                                <div class="order--no">
+                                    <p class="fw-600 details-no">Order #455473</p>
+                                </div>
+                                <div class="on-amt">
+                                    <p class="p-sec mt-3 july-order">Order placed on 15 July for Amount Rs 2,860</p>
+                                        <div class="d-flex mt-3 mb-4">
+                                            <p class="rate-us">Rate us now</p>
+                                            <!-- <div class=" " id="rate" ></div>  -->
+                                            <div id="rateYo"></div>
+                                       
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="card order--placed mt-4">
+                                <div class="order--no">
+                                    <p class="fw-600 details-no">DELIVERY ADDRESS</p>
+                                </div>
+                                <div class="on-amt">
+                                    <div class="d-flex home-pic mt-3">
+                                        <img class="img-fluid homee " src="images/home1.png" alt="">
+                                        <p class="f-20 home-text fw-600">Home</p>
+                                    </div>
+                                    <p class="p-sec  flat-no mb-4">Tower-A, Flat no. 854, Grand View Heights, Sector-11, Gurgaon</p>
+                                </div>
+                            </div>
+                            <div class="card order--invoice mt-4">
+                                <div class="order--no d-flex">
+                                    <p class="fw-600 details-no mr-auto">ORDER DETAILS</p>
+                                    <p class="fs-18 fw-500 cost-invoice">₹970</p>
+                                </div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="white-line"></div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="white-line"></div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="white-line"></div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="white-line"></div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="white-line"></div>
+                                <div class="media mt-3 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <div class="white-line"></div>
+                                <div class="media mt-4 on-amt">
+                                    <img class="img-fluid" src="images/lia.png" alt="">
+                                        <div class="media-body ml-3 ">
+                                            <div class="d-flex">
+                                                <p class="fw-600">LIA - <span class="itali-invoice">Italia</span> </p>
+                                                <div class="">    <img class="img-fluid mr-auto align-self-center ml-2 mr-auto " src="images/green dot.png" alt=""></div>
+                                                <p class="fs-18 fw-500 rate-invoice ml-auto">₹485</p>
+                                            </div>
+                                            <p class="p-sec extras-invoice mt-2">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            <p class="fw-400 quntity">Qty: 1</p>
+                                        </div>      
+                                </div>
+                                <a href="#" class="download-invoice mt-4 mb-4" >Download Invoice</a>
+                               
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+    </div> 
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModaleditorder">
+    Edit-order
+  </button>
+  
+  <!-- Modal -->
+   <div class="modal fade edit-orders" id="exampleModaleditorder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            
+              <section class="birthday-event mb-4">
+                <div class="">
+                   <div class="card">
+                      <div class="card-header">
+                        <div class="d-flex">
+                          <p class="birthday-txt fw-600">Birthday Party</p>
+                            <div class="d-flex ml-auto">
+                              <div><img src="images/birthdayEdit.png" class="img-fluid edit-img"></div>
+                              <p class="fw-500 edit-txt">Edit</p>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                            <div class="d-flex mb-3 pb-1">
+                              <p class="fw-500 birthday-list">Party Date</p>
+                              <p class="ml-auto fw-500 birthday-list">26th Aug</p>
+                            </div>
+                            <div class="d-flex ">
+                              <p class="fw-500 birthday-list">Time of party</p>
+                              <p class="ml-auto fw-500 birthday-list">12PM - 4PM</p>
+                            </div>
+                          
+                         
+                          <div class=" mt-4">
+                            <div class="d-flex mb-3 pb-1">
+                              <p class="fw-500 birthday-list">Number of people</p>
+                              <p class="ml-auto fw-500 birthday-list">20</p>
+                            </div>
+                            <div class="d-flex ">
+                              <p class="fw-500 birthday-list">Package Selected</p>
+                              <p class="ml-auto fw-500 birthday-list-yellow ">Spice it up</p>
+                            </div>
+                          </div>
+                        
+                      </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="coupon-page birthday-coupon-page">
+                        <div class=" card-padd">
+                            <div class="card coupon-card-items">
+                                <div class="card-bg d-flex">
+                                    <p class="carditems fw-600">Order dETAILS</p>
+                              
+                                </div>
+                                <div class="card-content">
+                                    <div class="card ">
+                                      <div class="d-flex spice-bot mb-4">
+                                        <div class="d-flex">
+                                          <p class="fw-500 fs-20 mr-3 pr-1 mb-4">Spice it up</p>
+                                          <div><img src="images/edits.png" class="img-fluid "></div>
+                                          <p class="fw-500 edits p-sec mb-4">Edit</p>
+                                        </div>
+    
+                                          <div class="  ml-auto">
+                                            <p class="fw-500 fs-20 mb-4">₹10,000</p>
+                                          </div>
+                                      </div>
+    
+                                      
+                                        <nav>
+                                          <div class="nav fixed-menu " id="nav-tab" role="tablist">
+                                            <a class="nav-link active tab-title fw-500" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Pizzas (06)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                            <a class="nav-link tab-title  fw-500" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sides (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                            <a class="nav-link tab-title  fw-500" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Desserts (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                            <a class="nav-link tab-title  fw-500" id="nav-desert-tab" data-toggle="tab" href="#nav-desert" role="tab" aria-controls="nav-desert" aria-selected="false">Drinks (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                          </div>
+                                        </nav>
+                                      
+                                      <div class="tab-content " id="nav-tabContent">
+                                        <div class="tab-pane fade show active mt-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                          <div class="row card-bor mb-4 mx-0">
+                                            <div class="col-md-3 mb-4 px-0">
+                                                <div class="d-flex">
+                                                    <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                    <div class="d-md-none d-block">
+                                                        <div class="d-flex mb-2 ml-3">
+                                                           <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                            <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 customize-card mb-4 px-0">
+                                                  <div class="d-md-block d-none">
+                                                    <div class="d-flex mb-2  pl-4">
+                                                       <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                  </div>
+                                               
+                                                <div class="mb-2 ">
+                                                    <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                                </div>     
+                                            </div>
+                                      </div>
+                                      <div class="row card-bor mb-4 mx-0">
+                                        <div class="col-md-3 mb-4 px-0">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card mb-4 px-0">
+                                             <div class="d-md-block d-none">
+                                                <div class="d-flex mb-2 pl-4">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                              </div>
+    
+                                           
+                                            <div class="mb-2 ">
+                                                <p class="card-text"></p>
+                                            </div>     
+                                        </div>
+                                   
+                                  </div>
+    
+                                  <div class="row   mx-0">
+                                    <div class="col-md-3   px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card  px-0">
+                                      <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2 pl-4">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="mb-2 ">
+                                            <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                        </div>     
+                                    </div>
+                                    <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                              </div>
+                                        </div>
+                                        <div class="tab-pane fade mt-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="row card-bor mb-4 mx-0">
+                                          <div class="col-md-3 mb-4 px-0">
+                                              <div class="d-flex">
+                                                  <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                  <div class="d-md-none d-block">
+                                                      <div class="d-flex mb-2 ml-3">
+                                                         <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                          <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                      </div>
+                                                  </div>
+                                                 
+                                              </div>
+                                          </div>
+                                          <div class="col-md-9 customize-card mb-4 px-0">
+                                            <div class="d-md-block d-none">
+                                                  <div class="d-flex mb-2 pl-4">
+                                                     <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                      <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                  </div>
+                                             </div>
+                                              <div class="mb-2 ">
+                                                  <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                              </div> 
+                                                
+                                          </div>
+                                    </div>
+                                    <div class="row  mx-0">
+                                      <div class="col-md-3  px-0">
+                                          <div class="d-flex">
+                                              <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                              <div class="d-md-none d-block">
+                                                  <div class="d-flex mb-2 ml-3">
+                                                     <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                      <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                  </div>
+                                              </div>
+                                             
+                                          </div>
+                                      </div>
+                                      <div class="col-md-9 customize-card  px-0">
+                                        <div class="d-md-block d-none">
+                                              <div class="d-flex mb-2 pl-4">
+                                                 <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                  <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                              </div>
+                                          </div>
+                                         
+                                          <div class="mb-2 ">
+                                              <p class="card-text"></p>
+                                          </div>     
+                                      </div>
+                                      <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                                </div>
+    
+    
+                                  </div>
+                                        <div class="tab-pane fade mt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                          <div class="row  mx-0">
+                                            <div class="col-md-3  px-0">
+                                                <div class="d-flex">
+                                                    <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                    <div class="d-md-none d-block">
+                                                        <div class="d-flex mb-2 ml-3">
+                                                           <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                            <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 customize-card  px-0">
+                                              <div class="d-md-block d-none">
+                                                    <div class="d-flex mb-2 pl-4">
+                                                       <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="mb-2 ">
+                                                    <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                                </div>     
+                                            </div>
+                                            <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                                      </div>
+                                        </div>
+                                        <div class="tab-pane fade mt-4" id="nav-desert" role="tabpanel" aria-labelledby="nav-desert-tab">
+                                          <div class="row card-bor mb-4 mx-0">
+                                            <div class="col-md-3 mb-4 px-0">
+                                                <div class="d-flex">
+                                                    <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                    <div class="d-md-none d-block">
+                                                        <div class="d-flex mb-2 ml-3">
+                                                           <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                            <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 customize-card mb-4 px-0">
+                                              <div class="d-md-block d-none">
+                                                    <div class="d-flex mb-2 pl-4 ">
+                                                       <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="mb-2 ">
+                                                    <p class="card-text ">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                                </div>     
+                                            </div>
+                                      </div>
+                                      <div class="row card-bor mb-4 mx-0">
+                                        <div class="col-md-3 mb-4 px-0">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card mb-4 px-0">
+                                          <div class="d-md-block d-none">
+                                                <div class="d-flex mb-2 pl-4">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                          </div>
+                                           
+                                            <div class="mb-2 ">
+                                                <p class="card-text "></p>
+                                            </div>     
+                                        </div>
+                                  </div>
+    
+                                  <div class="row   mx-0">
+                                    <div class="col-md-3  px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card  px-0">
+                                      <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2 pl-4">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="mb-2 ">
+                                            <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                        </div>     
+                                    </div>
+                                    <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                              </div>
+                          </div>
+                      </div>
+    
+
+                        
+                        
+                
+            </section>
+    
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalordermenu">
+    order-details-edit
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade order-detail-menu edit-orders" id="exampleModalordermenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="fw-600 p-sec">ORDER details</h5>
+              <div class="card order--placed">
+                <div class="order--no">
+                    <p class="fw-600 details-no">Order #455473</p>
+                </div>
+                <div class="on-amt">
+                    <p class="p-sec mt-3 july-order">Order placed on 15 July for Amount Rs 2,860</p>
+                        <div class="d-flex mt-3 mb-4">
+                            <p class="rate-us">Rate us now</p>
+                            <!-- <div class=" " id="rate" ></div>  -->
+                            <div id="rateYo"></div>
+                       
+                        </div>
+                </div>
+            </div>
+            <div class="card order--placed mt-4">
+                <div class="order--no">
+                    <p class="fw-600 details-no">DELIVERY ADDRESS</p>
+                </div>
+                <div class="on-amt">
+                    <div class="d-flex home-pic mt-3">
+                        <img class="img-fluid homee " src="images/home1.png" alt="">
+                        <p class="f-20 home-text fw-600">Home</p>
+                    </div>
+                    <p class="p-sec  flat-no mb-4">Tower-A, Flat no. 854, Grand View Heights, Sector-11, Gurgaon</p>
+                </div>
+            </div>
+
+            <section class="coupon-page birthday-coupon-page">
+                <div class=" card-padd">
+                    <div class="card coupon-card-items">
+                        <div class="card-bg d-flex">
+                            <p class="carditems fw-600">Order dETAILS</p>
+                      
+                        </div>
+                        <div class="card-content">
+                            <div class="card ">
+                              <div class="d-flex spice-bot mb-4">
+                                <div class="d-flex">
+                                  <p class="fw-500 fs-20 mr-3 pr-1 mb-4">Spice it up</p>
+                                  <div><img src="images/edits.png" class="img-fluid "></div>
+                                  <p class="fw-500 edits p-sec mb-4">Edit</p>
+                                </div>
+
+                                  <div class="  ml-auto">
+                                    <p class="fw-500 fs-20 mb-4">₹10,000</p>
+                                  </div>
+                              </div>
+
+                              
+                                <nav>
+                                  <div class="nav fixed-menu " id="nav-tab" role="tablist">
+                                    <a class="nav-link active tab-title fw-500" id="nav-home1-tab" data-toggle="tab" href="#nav-home1" role="tab" aria-controls="nav-home1" aria-selected="true">Pizzas (06)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                    <a class="nav-link tab-title  fw-500" id="nav-profile1-tab" data-toggle="tab" href="#nav-profile1" role="tab" aria-controls="nav-profile1" aria-selected="false">Sides (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                    <a class="nav-link tab-title  fw-500" id="nav-contact1-tab" data-toggle="tab" href="#nav-contact1" role="tab" aria-controls="nav-contact1" aria-selected="false">Desserts (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                    <a class="nav-link tab-title  fw-500" id="nav-desert1-tab" data-toggle="tab" href="#nav-desert1" role="tab" aria-controls="nav-desert1" aria-selected="false">Drinks (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                  </div>
+                                </nav>
+                              
+                              <div class="tab-content " id="nav-tabContent">
+                                <div class="tab-pane fade show active mt-4" id="nav-home1" role="tabpanel" aria-labelledby="nav-home1-tab">
+                                  <div class="row card-bor mb-4 mx-0">
+                                    <div class="col-md-3 mb-4 px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card mb-4 px-0">
+                                          <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2  pl-4">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                          </div>
+                                       
+                                        <div class="mb-2 ">
+                                            <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                        </div>     
+                                    </div>
+                              </div>
+                              <div class="row card-bor mb-4 mx-0">
+                                <div class="col-md-3 mb-4 px-0">
+                                    <div class="d-flex">
+                                        <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                        <div class="d-md-none d-block">
+                                            <div class="d-flex mb-2 ml-3">
+                                               <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-9 customize-card mb-4 px-0">
+                                     <div class="d-md-block d-none">
+                                        <div class="d-flex mb-2 pl-4">
+                                           <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                      </div>
+
+                                   
+                                    <div class="mb-2 ">
+                                        <p class="card-text"></p>
+                                    </div>     
+                                </div>
+                           
+                          </div>
+
+                          <div class="row   mx-0">
+                            <div class="col-md-3   px-0">
+                                <div class="d-flex">
+                                    <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                    <div class="d-md-none d-block">
+                                        <div class="d-flex mb-2 ml-3">
+                                           <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-9 customize-card  px-0">
+                              <div class="d-md-block d-none">
+                                    <div class="d-flex mb-2 pl-4">
+                                       <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                        <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                    </div>
+                                </div>
+                               
+                                <div class="mb-2 ">
+                                    <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                </div>     
+                            </div>
+                            <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                      </div>
+                                </div>
+                                <div class="tab-pane fade mt-4" id="nav-profile1" role="tabpanel" aria-labelledby="nav-profile1-tab"><div class="row card-bor mb-4 mx-0">
+                                  <div class="col-md-3 mb-4 px-0">
+                                      <div class="d-flex">
+                                          <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                          <div class="d-md-none d-block">
+                                              <div class="d-flex mb-2 ml-3">
+                                                 <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                  <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                              </div>
+                                          </div>
+                                         
+                                      </div>
+                                  </div>
+                                  <div class="col-md-9 customize-card mb-4 px-0">
+                                    <div class="d-md-block d-none">
+                                          <div class="d-flex mb-2 pl-4">
+                                             <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                              <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                          </div>
+                                     </div>
+                                      <div class="mb-2 ">
+                                          <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                      </div> 
+                                        
+                                  </div>
+                            </div>
+                            <div class="row  mx-0">
+                              <div class="col-md-3  px-0">
+                                  <div class="d-flex">
+                                      <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                      <div class="d-md-none d-block">
+                                          <div class="d-flex mb-2 ml-3">
+                                             <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                              <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                          </div>
+                                      </div>
+                                     
+                                  </div>
+                              </div>
+                              <div class="col-md-9 customize-card  px-0">
+                                <div class="d-md-block d-none">
+                                      <div class="d-flex mb-2 pl-4">
+                                         <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                          <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                      </div>
+                                  </div>
+                                 
+                                  <div class="mb-2 ">
+                                      <p class="card-text"></p>
+                                  </div>     
+                              </div>
+                              <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                        </div>
+
+
+                          </div>
+                                <div class="tab-pane fade mt-4" id="nav-contact1" role="tabpanel" aria-labelledby="nav-contact1-tab">
+                                  <div class="row  mx-0">
+                                    <div class="col-md-3  px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card  px-0">
+                                      <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2 pl-4">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="mb-2 ">
+                                            <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                        </div>     
+                                    </div>
+                                    <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                              </div>
+                                </div>
+                                <div class="tab-pane fade mt-4" id="nav-desert1" role="tabpanel" aria-labelledby="nav-desert1-tab">
+                                  <div class="row card-bor mb-4 mx-0">
+                                    <div class="col-md-3 mb-4 px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card mb-4 px-0">
+                                      <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2 pl-4 ">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="mb-2 ">
+                                            <p class="card-text ">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                        </div>     
+                                    </div>
+                              </div>
+                              <div class="row card-bor mb-4 mx-0">
+                                <div class="col-md-3 mb-4 px-0">
+                                    <div class="d-flex">
+                                        <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                        <div class="d-md-none d-block">
+                                            <div class="d-flex mb-2 ml-3">
+                                               <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-9 customize-card mb-4 px-0">
+                                  <div class="d-md-block d-none">
+                                        <div class="d-flex mb-2 pl-4">
+                                           <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                  </div>
+                                   
+                                    <div class="mb-2 ">
+                                        <p class="card-text "></p>
+                                    </div>     
+                                </div>
+                          </div>
+
+                          <div class="row   mx-0">
+                            <div class="col-md-3  px-0">
+                                <div class="d-flex">
+                                    <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                    <div class="d-md-none d-block">
+                                        <div class="d-flex mb-2 ml-3">
+                                           <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-9 customize-card  px-0">
+                              <div class="d-md-block d-none">
+                                    <div class="d-flex mb-2 pl-4">
+                                       <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                        <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                    </div>
+                                </div>
+                               
+                                <div class="mb-2 ">
+                                    <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                </div>     
+                            </div>
+                            <a href="#" class="download-invoice mt-4 ml-0" >Download Invoice</a>
+                      </div>
+                  </div>
+              </div>
+
+
+                
+                
+        
+    </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="js/jquery-3.6.0.min.js"></script> 
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="js/jquery.rating.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  <script src="js/bootstrapValidator.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  <script src="js/custom.js"></script>
+  
+  
+
+<script>
+    
+    // $('#rate').rating({
+    //     size:40,        
+    //     hoverColor:"#5FC2AE",        
+    //     count:5        
+                        
+    // });  
+
+ 
+ $("#rateYo").rateYo({
+    ratedFill: "#5FC2AE",
+ });
+
+
+   
+</script>
+
+
+</body>
+
+</html>

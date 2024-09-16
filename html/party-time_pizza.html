@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        #ui-id-2{ height: 324px;width: 401px !important;padding: 30px 0 0 0;overflow-y: auto;z-index: 10000;background: #0A100D;border: 0;}
+        #ui-id-2.ui-menu .ui-menu-item-wrapper{border-bottom: 1px solid rgb(170 174 187 / 16%) !important;padding: 0 0 16px 0;margin: 0 0 16px 0;}
+        #ui-id-2.ui-menu .ui-menu-item-wrapper.ui-state-active{background: linear-gradient(0deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #121212;border: 0;border-color: transparent;}
+        #ui-id-2 .ui-menu-item-wrapper p{font-weight: 600;font-size: 16px;color: #FFFFFA;text-transform: capitalize;line-height: 24px;}
+        #ui-id-2 .ui-menu-item-wrapper span{display: block;font-size: 14px;line-height: 22px;color: rgba(255, 255, 250, 0.8) !important;text-transform: capitalize;font-weight: 400;margin-top: 8px;}
+
+        .order-summary{color: #5FC2AE;text-transform: uppercase;letter-spacing: 1px;line-height:1.22 ;margin-bottom: 39px;}
+        .birthday-txt{color: #FFFFFA;text-transform: uppercase;letter-spacing: 1px;}
+        .birthday-event .card{background: rgba(255, 255, 250, 0.1);border-radius: 12px;}
+        .birthday-event .card-header{background: rgba(255, 255, 255, 0.05);border-radius: 12px 12px 0 0;padding: 16px 24px 12px 24px;}
+        .edit-txt{color: #5FC2AE;line-height: 1.37;padding-left: 10.44px;}
+        .birthday-event .card-body{padding: 29px 24px 35px 24px;}
+        .birthday-list{color: rgba(255, 255, 255, 0.87);line-height: 1.37;}
+        .birthday-list-yellow{color: #E0AF02;line-height: 1.37;}
+        .line{border: 0;}
+        .line::after{content: ''; border-right: 1px solid #FFFFFF;top: 0;height:70px;position: absolute;right: 0;}
+
+        .birthday-coupon-page{padding: 40px 0 50px 0;}
+        .edits{color: #5FC2AE;padding-left: 5.47px;line-height: 1.71;padding-top: 2px;}
+        .spice-bot{border-bottom: 0.2px solid #FFFFFF;}
+        .birthday-coupon-page .card-text{color: rgba(255, 255, 250, 0.6);font-size: 14px;font-weight: 300;line-height: 1.57;width: 100%;max-width: 500px;}
+        .card-bor{border-bottom:1px solid rgba(255, 255, 250, 0.08);}
+        .birthday-coupon-page a{color: #FFFFFF;font-size: 16px;line-height: 1.37;padding-right: 31.34px;}
+        .birthday-coupon-page a.active{color: #E0AF02;}
+        .birthday-coupon-page a.active img{transform: rotateX(180deg);transition-duration: 0.5s;}
+
+      
+
+        @media only screen and (max-width: 767px) {  
+            .modal-backdrop.show {opacity: 1;background: transparent;display: none;}  
+            .close{display: none;}
+            #ui-id-2 .ui-menu-item-wrapper p {  font-size: 12px;  line-height: 18px;}
+            #ui-id-2 { width: 100% !important;  padding: 4px 23px 0 0;}
+            #ui-id-2 .ui-menu-item-wrapper span {    font-size: 12px;    line-height: 18px;}
+
+            .line::after{border: 0 !important;}
+            .birthday-event .col-md-6:last-child{margin-top: 20px;}
+            .birthday-list-yellow{color:rgba(255, 255, 255, 0.87) ;}
+            .birthday-coupon-page .cardpiza {margin-bottom: 0px;}
+            .birthday-coupon-page .img-txt-pad{margin-top: 24px;}
+            .fixed-menu{overflow-x: scroll;flex-wrap: inherit;white-space: nowrap;padding-bottom: 10px;}
+            .apply-coupon{margin-top: 40px;}
+
+
+            .edit-orders .modal-content{padding: 20px 0;}
+            .fixed-menu{overflow-x: scroll;}
+            .birthday-coupon-page .card-text{padding-left: 0 !important;font-size: 12px;width: 100%;max-width: 320px;}
+            .birthday-coupon-page .img-txt-pad{margin-top: 15px;}
+            .cardpiza{margin-bottom: 0;}
+
+            .birthday-txt{font-size: 14px;}
+            .edit-img{width: 20px;}
+            .edit-txt{font-size: 12px;margin-top: 5px;}
+            .birthday-event .card-body{padding:  24px 16px;}
+            .birthday-coupon-page .tab-title{font-size: 14px;}
+            /* .birthday-coupon-page p{font-size: 14px;margin-bottom: 15px !important;} */
+            .birthday-coupon-page .card-content{padding: 21px 16px 24px 16px;}
+            .birthday-coupon-page{padding: 40px 15px;}
+            .birthday-event .card-header{padding: 14px 16px;}
+            .edi_text{font-size: 14px;margin-bottom: 15px !important;}
+            .birthday-coupon-page  .card-bg{padding: 15px 18px 12px 18px;}
+          }
+    </style>
+    <title>Party-Time-pizza</title>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z3e-xBgzeKw10ou7QQ6NaNfcI3UZ4KM&libraries=places&callback=initMap&v=weekly&channel=2"></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z3e-xBgzeKw10ou7QQ6NaNfcI3UZ4KM&libraries=places&callback=initMap&v=weekly&channel=2"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z3e-xBgzeKw10ou7QQ6NaNfcI3UZ4KM&libraries=places"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header_sec">
+            <nav class="navbar navbar-expand-lg navbar-light header_color px-md-0">
+                <div class="container">
+              <img src="images/logo.png" class="img-fluid logo_img">
+              <div class="d--none position-relative">
+                <div class="d-flex address_info cursor-pointer"  data-toggle="modal" data-target="#locationModal">
+                  <div><img src="images/location.png" class="img-fluid"></div>
+                  <span>Haryana</span>
+                  <!-- <p class="min-max-991">Tower-A, Flat no. 854,...</p> -->
+                </div>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img class="hamberger" src="images/Hamburger.png">
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="desktop-menu ml-auto">
+                  <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Corporate Tie Up <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Party Time</a>
+                    </li>
+                    <li class="nav-item">
+                      <button class="btn btn_signin ml-4" type="button" data-toggle="modal" data-target="#loginmodal">Sign In</button>
+                    </li>
+                    <li class="nav-item">
+                      <a href=""><img  src="images/empty.png" class="img-fluid empoty"></a>
+                    </li>
+                    <li class="nav-item">
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle px-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="images/Hamburger.png" class="img-fluid">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/gift-cart-menu.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">Gift A Cart</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/glass.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">Party Time</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/corporate.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">Corporate Tie Up</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/about.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">About Us</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <!-- <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/my-account.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">My Account</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a> -->
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="side-menu">
+                  <ul class="navbar-nav">
+                    <div class="d-flex side-bottom pb-4 ">
+                      <div>
+                        <!-- <img src="images/sidemenuprofile.png" class="img-fluid profile-image"> -->
+                        <img src="images/empty.png" class="img-fluid profile-image">
+                      </div>
+                      <!-- <div class="">
+                        <h1 class="profile-text pl-3 mb-2">Ravina Malik</h1>
+                        <p><span>Click</span> to view or edit account details</p>
+                      </div> -->
+                      <div class="">
+                        <h1 class="profile-text pl-3 mb-2">Welcome!</h1>
+                        <p class="fw-500"><span class="mr-2">Sign In</span> or <span class="ml-2">Sign Up</span></p>
+                      </div>
+                      <img src="images/cross.png" class="img-fluid ml-auto cross">
+                    </div>
+                    <!-- active  -->
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/gift.png">Gift A Cart</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/glass.png">Party Time</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/corporate.png">Corporate Tie Up</a>
+                    </li>
+                    <li class="nav-item accordion my--account" id="accordionExample">
+                      <div class="card">
+                        <div class="" id="headingTwo">
+                            <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              <a class="nav-link" href="#"><img src="images/my-account.png">My Profile</a>
+                            </button>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                          <div class="card-body pb-0">
+                            <div class="nav-item ">
+                              <a class="nav-link" href="#"><img src="images/clock.png">Order History</a>
+                            </div>
+                            <div class="nav-item ">
+                              <a class="nav-link" href="#"><img src="images/saved-address.png"> Saved Address</a>
+                            </div>
+                            <div class="nav-item ">
+                              <a class="nav-link" href="#"><img src="images/favourites.png"> Favourites</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item  ">
+                      <a class="nav-link" href="#"><img src="images/about.png">About Us</a>
+                    </li>
+                    <li class="nav-item  ">
+                      <a class="nav-link" href="#"><img src="images/contact.png">Contact Us</a>
+                    </li>
+                    
+                  </ul>
+                  <ul class="navbar-nav mb-0 ">
+                    <li class="nav-item side-bottom-footer">
+                      <a class="nav-link" href="#"><img src="images/logout.png">Logout</a>
+                    </li>
+                    <li><a class="terms mb-2" href="#">Terms</a></li>
+                    <li><a class="terms mb-2" href="#">Privacy Policy</a></li>
+                    <li><a class="version" href="#">Version 0.1.02</a></li>
+                  </ul>
+                  <div>
+                    
+                  </div>
+                </div>
+              </div>
+                  </div>
+            
+               
+              </nav>
+        </header>
+        <!-- Location Modal -->
+        <div class="location-card">
+          <div class="location-card-overlay"></div>
+          <div class="d-flex">
+            <p class="mr-auto fw-500">Location</p>
+            <div><img class="close-card cursor-pointer" data-dismiss="modal" aria-label="Close" src="images/close.png" alt=""></div>
+          </div>
+          <p class="pr-md-4 pt-3 we_currently">We are currently delivering in Gurugram phase 1 to 5 only*</p>
+          <form class="custom-form mt-3 location-search" action="">
+            <div class="form-group">
+              <input type="text" id="project" class="form-control location_search" placeholder="Enter delivering location">
+              <input type="hidden" id="project-id">
+              <p id="project-description"></p>
+            </div>
+          </form>
+          <div class="d-flex use_currext">
+            <div><img class="" src="images/location-yellow.png"></div>
+            <p>Use Current Location</p>
+          </div>
+          <div class="saved_locations ">
+            <div class="d-flex loc_viewall mb-4 pb-2">
+              <p class="p-sec mr-auto">Select from Saved Locations</p>
+              <a href="#">View All</a>
+            </div>
+            <div class="form-group saved_addresses">
+              <div class="custom-control custom-radio pl-0">
+                <input type="radio" id="savedAddress" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="savedAddress">
+                  <div class="d-flex home-address">
+                    <div class="mr-2 pr-1"><img src="images/home1.png" alt=""></div>
+                    <div>
+                      <p class="fw-600 home">Home</p>
+                      <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="custom-control custom-radio pl-0">
+                <input type="radio" id="savedAddress1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="savedAddress1">
+                  <div class="d-flex home-address">
+                    <div class="mr-2 pr-1"><img src="images/work.png" alt=""></div>
+                    <div>
+                      <p class="fw-600 home">Work</p>
+                      <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Location Modal -->
+       
+
+
+        <section class="birthday-event">
+          <div class="container">
+            <p class="order-summary fw-600 fs-18">Order Summary</p>
+            <div class="card">
+                <div class="card-header">
+                  <div class="d-flex">
+                    <p class="birthday-txt fw-600">Birthday Party</p>
+                      <div class="d-flex ml-auto">
+                        <div><img src="images/birthdayEdit.png" class="img-fluid "></div>
+                        <p class="fw-500 edit-txt">Edit</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 line">
+                      <div class="d-flex mb-3 pb-1">
+                        <p class="fw-500 birthday-list">Party Date</p>
+                        <p class="ml-auto fw-500 birthday-list">26th Aug</p>
+                      </div>
+                      <div class="d-flex ">
+                        <p class="fw-500 birthday-list">Time of party</p>
+                        <p class="ml-auto fw-500 birthday-list">12PM - 4PM</p>
+                      </div>
+                    </div>
+                   
+                    <div class="col-md-6">
+                      <div class="d-flex mb-3 pb-1">
+                        <p class="fw-500 birthday-list">Number of people</p>
+                        <p class="ml-auto fw-500 birthday-list">20</p>
+                      </div>
+                      <div class="d-flex ">
+                        <p class="fw-500 birthday-list">Package Selected</p>
+                        <p class="ml-auto fw-500 birthday-list-yellow ">Spice it up</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="coupon-page birthday-coupon-page">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-8 card-padd">
+                        <div class="card coupon-card-items">
+                            <div class="card-bg d-flex">
+                                <p class="carditems fw-600">Cart Items</p>
+                                <p class="itemsno ml-auto fw-400">1 Items</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="card ">
+                                  <div class="d-flex spice-bot mb-4">
+                                    <div class="d-flex">
+                                      <p class="fw-500 edi_text fs-20 mr-3 pr-1 mb-4">Spice it up</p>
+                                      <div><img src="images/edits.png" class="img-fluid "></div>
+                                      <p class="fw-500 edits p-sec mb-4">Edit</p>
+                                    </div>
+
+                                      <div class="  ml-auto">
+                                        <p class="fw-500 edi_text fs-20 mb-4">₹10,000</p>
+                                      </div>
+                                  </div>
+
+                                  
+                                    <nav>
+                                      <div class="nav fixed-menu " id="nav-tab" role="tablist">
+                                        <a class="nav-link active fw-500" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Pizzas (06)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                        <a class="nav-link fw-500" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sides (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                        <a class="nav-link fw-500" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Desserts (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                        <a class="nav-link fw-500" id="nav-desert-tab" data-toggle="tab" href="#nav-desert" role="tab" aria-controls="nav-desert" aria-selected="false">Drinks (04)<img class="img-fluid ml-2" src="../html/images/tabarr.png"></a>
+                                      </div>
+                                    </nav>
+                                  
+                                  <div class="tab-content " id="nav-tabContent">
+                                    <div class="tab-pane fade show active mt-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                      <div class="row card-bor mb-4 mx-0">
+                                        <div class="col-md-3 mb-4 px-0">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card mb-4 px-0">
+                                              <div class="d-md-block d-none">
+                                                <div class="d-flex mb-2 ">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                              </div>
+                                           
+                                            <div class="mb-2">
+                                                <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            </div>     
+                                        </div>
+                                  </div>
+                                  <div class="row card-bor mb-4 mx-0">
+                                    <div class="col-md-3 mb-4 px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card mb-4 px-0">
+                                         <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2 ">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                          </div>
+
+                                       
+                                        <div class="mb-2">
+                                            <p class="card-text"></p>
+                                        </div>     
+                                    </div>
+                              </div>
+
+                              <div class="row   mx-0">
+                                <div class="col-md-3   px-0">
+                                    <div class="d-flex">
+                                        <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                        <div class="d-md-none d-block">
+                                            <div class="d-flex mb-2 ml-3">
+                                               <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-9 customize-card  px-0">
+                                  <div class="d-md-block d-none">
+                                        <div class="d-flex mb-2 ">
+                                           <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="mb-2 ">
+                                        <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                    </div>     
+                                </div>
+                          </div>
+                                    </div>
+                                    <div class="tab-pane fade mt-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="row card-bor mb-4 mx-0">
+                                      <div class="col-md-3 mb-4 px-0">
+                                          <div class="d-flex">
+                                              <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                              <div class="d-md-none d-block">
+                                                  <div class="d-flex mb-2 ml-3">
+                                                     <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                      <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                  </div>
+                                              </div>
+                                             
+                                          </div>
+                                      </div>
+                                      <div class="col-md-9 customize-card mb-4 px-0">
+                                        <div class="d-md-block d-none">
+                                              <div class="d-flex mb-2 ">
+                                                 <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                  <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                              </div>
+                                           </div>
+                                         
+                                          <div class="mb-2">
+                                              <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                          </div>     
+                                      </div>
+                                </div>
+                                <div class="row  mx-0">
+                                  <div class="col-md-3  px-0">
+                                      <div class="d-flex">
+                                          <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                          <div class="d-md-none d-block">
+                                              <div class="d-flex mb-2 ml-3">
+                                                 <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                  <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                              </div>
+                                          </div>
+                                         
+                                      </div>
+                                  </div>
+                                  <div class="col-md-9 customize-card  px-0">
+                                    <div class="d-md-block d-none">
+                                          <div class="d-flex mb-2 ">
+                                             <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                              <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                          </div>
+                                      </div>
+                                     
+                                      <div class="mb-2">
+                                          <p class="card-text"></p>
+                                      </div>     
+                                  </div>
+                            </div>
+
+
+                              </div>
+                                    <div class="tab-pane fade mt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                      <div class="row  mx-0">
+                                        <div class="col-md-3  px-0">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card  px-0">
+                                          <div class="d-md-block d-none">
+                                                <div class="d-flex mb-2 ">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="mb-2">
+                                                <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            </div>     
+                                        </div>
+                                  </div>
+                                    </div>
+                                    <div class="tab-pane fade mt-4" id="nav-desert" role="tabpanel" aria-labelledby="nav-desert-tab">
+                                      <div class="row card-bor mb-4 mx-0">
+                                        <div class="col-md-3 mb-4 px-0">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card mb-4 px-0">
+                                          <div class="d-md-block d-none">
+                                                <div class="d-flex mb-2 ">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="mb-2">
+                                                <p class="card-text ">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            </div>     
+                                        </div>
+                                  </div>
+                                  <div class="row card-bor mb-4 mx-0">
+                                    <div class="col-md-3 mb-4 px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card mb-4 px-0">
+                                      <div class="d-md-block d-none">
+                                            <div class="d-flex mb-2 ">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                      </div>
+                                       
+                                        <div class="mb-2">
+                                            <p class="card-text "></p>
+                                        </div>     
+                                    </div>
+                              </div>
+
+                              <div class="row   mx-0">
+                                <div class="col-md-3  px-0">
+                                    <div class="d-flex">
+                                        <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                        <div class="d-md-none d-block">
+                                            <div class="d-flex mb-2 ml-3">
+                                               <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-9 customize-card  px-0">
+                                  <div class="d-md-block d-none">
+                                        <div class="d-flex mb-2 ">
+                                           <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="mb-2">
+                                        <p class="card-text img-txt-pad">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                    </div>     
+                                </div>
+                          </div>
+                                    </div>
+                                  </div>
+
+                                    <!-- <div class="row card-bor mb-4 mx-0">
+                                        <div class="col-md-3 mb-4 px-0">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-md-none d-block ml-auto">
+                                                    <div class="inc-number ">
+                                                        ₹485
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card mb-4 px-0">
+                                          
+                                                <div class="d-flex mb-2 ">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                           
+                                            <div class="mb-2">
+                                                <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                            </div>     
+                                        </div>
+                                  </div>
+                                  <div class="row card-bor mb-4 mx-0">
+                                    <div class="col-md-3 mb-4 px-0">
+                                        <div class="d-flex">
+                                            <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                            <div class="d-md-none d-block">
+                                                <div class="d-flex mb-2 ml-3">
+                                                   <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-md-none d-block ml-auto">
+                                                <div class="inc-number ">
+                                                    ₹485
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 customize-card mb-4 px-0">
+                                      
+                                            <div class="d-flex mb-2 ">
+                                               <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                       
+                                        <div class="mb-2">
+                                            <p class="card-text"></p>
+                                        </div>     
+                                    </div>
+                              </div>
+
+                              <div class="row   mx-0">
+                                <div class="col-md-3  px-0">
+                                    <div class="d-flex">
+                                        <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                        <div class="d-md-none d-block">
+                                            <div class="d-flex mb-2 ml-3">
+                                               <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-md-none d-block ml-auto">
+                                            <div class="inc-number ">
+                                                ₹485
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 customize-card  px-0">
+                                  
+                                        <div class="d-flex mb-2 ">
+                                           <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                            <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                        </div>
+                                   
+                                    <div class="mb-2">
+                                        <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives, Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                    </div>     
+                                </div>
+                          </div>
+                                 -->
+                                   
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-primary p-0" data-toggle="modal" data-target="#applycoupon">
+                            <div class="apply-coupon d-flex">
+                                <p class="apply-coupontxt fw-500">Apply coupon</p>
+                                <div class="ml-auto">
+                                    <img src="images/right.png">
+                                </div>
+                            </div>
+                        </button>
+
+                    
+                        
+                    <div class="total">
+                            <div class="total-shipping">
+                                <div class="d-flex mb-3">
+                                    <p class="sub-total fw-600">Subtotal</p>
+                                    <p class="total-amt fw-500  ml-auto">₹10,000</p>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <p class="sub-total fw-400 ">Number of People</p>
+                                    <p class="charge fw-400 ml-auto">20</p>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <p class="sub-total fw-400">Van Charges (4 Hours)</p>
+                                    <p class="charge fw-400  ml-auto">Free</p>
+                                </div>
+                                <div class="d-flex ">
+                                    <p class="sub-total fw-400 ">Tax</p>
+                                    <p class="charge fw-400  ml-auto">Free of cost</p>
+                                </div>
+                            </div>
+                            <div class="amount-total d-flex ">
+                                <p class="sub-totals fw-600">TOTAL</p>
+                                <p class="amount-final fw-500 ml-auto">₹100,000</p>
+                            </div>
+                        </div>
+                        <div class="procedd-bg">
+                            <div class="d-flex">
+                                <div>
+                                    <p class="amt fw-500 mb-1">₹10,000</p>
+                                    <p class="amt-item fw-400">2 items in cart</p>
+                                </div>
+                                <button type="button" class="proceed fw-600 ml-auto" >Proceed</button>
+                             
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+                    
+                    
+                    <!-- Modal -->
+                    <div class="modal fade checkkk-out" id="Checkout" tabindex="-1" aria-labelledby="exampleModalLabel " aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Checkout As</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6 position-relative">
+                                        <div class="new-userrr">
+                                            <img class="img-fluid polyee" src="images/poly.png" alt="">
+                                            <img class="img-fluid recttt" src="images/recttt.png" alt="">
+                                            <img class="img-fluid half-roundd" src="images/half-round.png" alt="">
+                                            <p class="fs-20 fw-600 mb-3 next-time">Sign in to save your details for next time </p>
+                                            <button class="default-btn p-sec fw-600 in--now">Sign in Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="in-later ">
+                                            <p class="fw-600 or-later">OR</p>
+                                            <p class="p-sec fw-400 sign--inn-later">Sign in  Later</p>
+                                            <button class="default-btn p-sec fw-600 as-guest">Checkout as Guest</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Button trigger modal -->
+                    
+                            
+                    <!-- Modal -->
+                    
+                    
+            </div>
+        </section>
+
+        
+    </div>
+
+   <!-- Coupon -->
+    <div class="modal fade coupon-popup" id="applycoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="d-flex d_md_none w-100">
+                        <div class="ml-3">
+                            <a href="#" class="back_btn" data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                        </div>
+                        <p class="add-adres fw-600 align-self-center text-center w-100">View  Coupons</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><div><img class="img-fluid mb-md-1 mr-md-4" src="images/cancel.png" alt=""></div></span>
+                    </button>
+                    <p class="coupon-modal fw-600 mb-4 d_sm_none">Coupons</p>
+                    <div class="coup-list error-coupon mb-4">
+                        <input type="text" class="coupon-note fw-500"
+                            placeholder="Enter Coupon Code">
+                        <button type="button" class="apply fw-500">Apply</button>
+                    </div>
+                    <div class="scroll custom-scrollbar rmv-scroll">
+                        <div class="exls d-flex mb-3">
+                            <div>
+                                <p class="exl-text fw-500">EXL2020</p>
+                                <p class="discount fw-400">Get 40% off on your first order</p>
+                            </div>
+                            <button type="button" class="apply-discount text-center ml-auto mb-3">Apply</button>
+                        </div>
+                   
+                        <div class="d-flex error-msg">
+                             <div class="oops-img img-fluid  mr-2"> <img class="oops-img" src="images/oops.png"></div>
+                             <p class="oops-bug fw-400 "><span class="oops fw-500 mr-1">OOPS!</span>This coupon can only
+                            be redeeemed on your first order. Apply other coupon.</p>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label  d-flex " for="customRadio1"> 
+                                <div>
+                                  <p class="exl-text fw-500">EXL2020</p>
+                                  <p class="discount fw-400">Get 40% off on your first order</p>
+                                 </div>
+                                 <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                        </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio2"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio3"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio4"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio5"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio6"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio7" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio7"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio8" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio8"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+   
+        </div>
+    </div>
+  
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/custom.js"></script>
+
+
+    <script>
+        $( function() {
+          var projects = [
+            {
+              value: "Arjun",
+              label: "HSR Layout",
+              desc: "Bengaluru, Karnataka, India",
+            },
+            {
+              value: "Reddy",
+              label: "HSR BDA Complex",
+              desc: "Agara Lake, Sector 6, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: "HSR Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }, 
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }
+          ];
+       
+          $( "#project" ).autocomplete({
+            minLength: 0,
+            source: projects,
+            focus: function( event, ui ) {
+              $( "#project" ).val( ui.item.label );
+              return false;
+            },
+            select: function( event, ui ) {
+              $( "#project" ).val( ui.item.label );
+              $( "#project-id" ).val( ui.item.value );
+              $( "#project-description" ).html( ui.item.desc );
+              // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+              return false;
+            }
+          })
+          .autocomplete( "instance" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+              .append( "<div>" + "<p>" + item.label + "</p>"  + "<span>" + item.desc + "</span>" + "</div>" )
+              .appendTo( ul );
+          };
+      
+        });
+
+
+        $( function() {
+          var projects = [
+            {
+              value: "Arjun",
+              label: "HSR Layout",
+              desc: "Bengaluru, Karnataka, India",
+            },
+            {
+              value: "Reddy",
+              label: "HSR BDA Complex",
+              desc: "Agara Lake, Sector 6, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: "HSR Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }, 
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }
+          ];
+       
+          $( "#project1" ).autocomplete({
+            minLength: 0,
+            source: projects,
+            focus: function( event, ui ) {
+              $( "#project" ).val( ui.item.label );
+              return false;
+            },
+            select: function( event, ui ) {
+              $( "#project1" ).val( ui.item.label );
+              $( "#project-id1" ).val( ui.item.value );
+              $( "#project-description1" ).html( ui.item.desc );
+              // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+              return false;
+            }
+          })
+          .autocomplete( "instance" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+              .append( "<div>" + "<p>" + item.label + "</p>"  + "<span>" + item.desc + "</span>" + "</div>" )
+              .appendTo( ul );
+          };
+      
+        });
+        </script>
+      
+   
+      
+      <script>
+        
+
+        var latitude = Number(document.getElementById("la").value);
+        var longitude = Number(document.getElementById("lo").value);
+        
+        function initMap() {
+          var uluru = {
+            lat: latitude,
+            lng: longitude
+          };
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 16,
+            center: uluru,
+            styles: [
+              { elementType: "geometry", stylers: [{ color: "#343332" }] },
+              { elementType: "labels.text.stroke", stylers: [{ color: "#343332" }] },
+              { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+              {
+                featureType: "road",
+                elementType: "geometry",
+                stylers: [{ color: "#454545" }],
+              },
+              {
+                featureType: "road",
+                elementType: "geometry.stroke",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road.highway",
+                elementType: "geometry",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road.highway",
+                elementType: "geometry.stroke",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road.highway",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#343332" }],
+              },
+              // {
+              //   featureType: "transit",
+              //   elementType: "geometry",
+              //   stylers: [{ color: "#343332" }],
+              // },
+              // {
+              //   featureType: "transit.station",
+              //   elementType: "labels.text.fill",
+              //   stylers: [{ color: "#343332" }],
+              // },
+              // {
+              //   featureType: "water",
+              //   elementType: "geometry",
+              //   stylers: [{ color: "#343332" }],
+              // },
+              // {
+              //   featureType: "water",
+              //   elementType: "labels.text.fill",
+              //   stylers: [{ color: "#343332;" }],
+              // },
+              // {
+              //   featureType: "water",
+              //   elementType: "labels.text.stroke",
+              //   stylers: [{ color: "#343332" }],
+              // },
+            ],
+          });
+          var iconBase = '../html/images/';
+          marker = new google.maps.Marker({
+            position: uluru,
+            animation: google.maps.Animation.DROP,
+            map: map,
+            draggable: true,
+            icon: iconBase + 'location_pin.png'
+            //title: "Hello World!",
+          });
+          google.maps.event.addListener(marker, 'dragend',
+            function(marker) {
+                console.log(marker)
+            //   currentLatitude = marker.position.lat();
+            //   currentLongitude = marker.position.lng();
+            //   $("#la").val(currentLatitude);
+            //   $("#lo").val(currentLongitude);
+            }
+          );
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
+
+   </script>
+
+       
+       
+
+</body>
+
+</html>

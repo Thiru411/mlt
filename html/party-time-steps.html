@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+<!-- <link rel="stylesheet" href="css/multi-form.css"> -->
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<title>Party-Time-Steps</title>
+
+<style>
+    
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="party_time_steps">
+            <div class="container">
+                <p class="party_time_text mb-4">Party Time</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 party-rotate">
+                        <form class="form-horizontal wizard_form" action="" method="POST" id="myform">
+
+                            <fieldset id="occasion_information" class="card party-mood partytime_step1 mb-4 ">
+                                <div class="card-header" id="heading01">
+                                    <button class="btn btn-link btn-block text-left fw-500" type="button" data-toggle="collapse" data-target="#collapse01" aria-expanded="true" aria-controls="collapse01">
+                                        1. WHAT IS THE OCCASION?
+                                        <div><img src="images/signin-tick.png" class="img-fluid float-right sign-tick"></div>
+                                    </button>
+                                </div>
+                                <div id="collapse01" class="collapse show" aria-labelledby="heading01" data-parent="#myform">
+                                    <div class="card-body">
+                                        <div class="form-group mb-0  position-relative">
+                                        <div class="custom-control custom-radio custom-control-inline occasion-party pl-0 ">
+                                            <input type="radio" id="partytype1" name="occation" class="custom-control-input">
+                                            <label class="custom-control-label" for="partytype1">Birthday</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline occasion-party pl-0 ">
+                                            <input type="radio" id="partytype2" name="occation" class="custom-control-input">
+                                            <label class="custom-control-label" for="partytype2">Anniversary</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline occasion-party pl-0 mr-0">
+                                            <input type="radio" id="partytype3" name="occation" class="custom-control-input others" value="others">
+                                            <label class="custom-control-label" for="partytype3">Others</label>
+                                        </div>
+                                        <div class="form-group mt-4 mb-0 others_field">
+                                            <input type="text" class="form-control honor-of " name="other_occassion" placeholder="Occassion is in honor of" data-bv-notempty-message="Please enter Occassion">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="next_bar wizard_step1"><a class="default-btn next">next1</a></div>
+                                
+                            </fieldset>
+                            <fieldset id="party_information" class="card party-mood partytime_step2 mb-4">
+                                <div class="card-header" id="heading02">
+                                    <button class="btn btn-link btn-block text-left fw-500 disabled" type="button" data-toggle="collapse" data-target="#collapse02" aria-expanded="false" aria-controls="collapse02">
+                                        2. Select the timing of the party
+                                        <div><img src="images/signin-tick.png" class="img-fluid float-right sign-tick"></div>
+                                    </button>
+                                </div>
+                                <div id="collapse02" class="collapse" aria-labelledby="heading02" data-parent="#myform">
+                                    <div class="card-body d-flex">
+                                        <div class="form-group d-flex mb-0 position-relative">
+                                            <div class="custom-control custom-radio days-month custom-control-inline">
+                                                <input type="radio" id="today1" name="today_tomorrow" class="custom-control-input">
+                                                <label class="custom-control-label" for="today1">
+                                                    <p class="fw-500 to-dayy ">today</p>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-radio days-month custom-control-inline">
+                                                <input type="radio" id="today2" name="today_tomorrow" class="custom-control-input">
+                                                <label class="custom-control-label" for="today2">
+                                                    <p class="fw-500 tom-dayy ">Tomorrow</p>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control date-form custom-radio days-month custom-control-inline">
+                                                <input type="radio" id="today3" name="today_tomorrow" class="custom-control-input">
+                                                <label class="custom-control-label date-form" for="today3">
+                                                    <div class="  select-size select-timing select-dates position-relative">
+                                                        <select class="selectpicker select_date form-control" >
+                                                            <option></option>
+                                                            <option>18/11/2021</option>
+                                                            <option>19/11/2021</option>
+                                                            <option>20/11/2021</option>
+                                                            <option>21/11/2021</option>
+                                                            <option>22/11/2021</option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <!-- <div class="form-group mb-0 select-size select-timing select-dates position-relative">
+                                                <select class="selectpicker select_date form-control" name="from_date" id="from_date">
+                                                    <option></option>
+                                                    <option>18/11/2021</option>
+                                                    <option>19/11/2021</option>
+                                                    <option>20/11/2021</option>
+                                                    <option>21/11/2021</option>
+                                                    <option>22/11/2021</option>
+                                                </select>
+                                            </div> -->
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="next_bar wizard_step2"><a class="default-btn next">next2</a></div>
+                            </fieldset>
+                            <fieldset id="time_information" class="card party-mood partytime_step3 mb-4">
+                                <div class="card-header" id="heading03">
+                                    <button class="btn btn-link btn-block text-left fw-500 disabled" type="button" data-toggle="collapse" data-target="#collapse03" aria-expanded="false" aria-controls="collapse03">
+                                        3. Select the timing of the party
+                                        <div><img src="images/signin-tick.png" class="img-fluid float-right sign-tick"></div>
+                                    </button>
+                                </div>
+                                <div id="collapse03" class="collapse" aria-labelledby="heading03" data-parent="#myform">
+                                    <div class="card-body">
+                                        <div class="d-flex mt-3 somedata" id="second">
+                                            <div class="form-group mb-0 select-size select-timing position-relative">
+                                                <select class="selectpicker select_time form-control" name="from_time" id="from_time">
+                                                    <option></option>
+                                                    <option>12pm - 1PM</option>
+                                                    <option>1:00 - 1:30 PM</option>
+                                                    <option>1:30 - 2:30 PM</option>
+                                                    <option>2:30 - 3:00 PM</option>
+                                                    <option>2:30 - 3:00 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="align-self-center mx-4"><p class="fw-500">to</p></div>
+                                            <div class="form-group mb-0 select-size select-timing position-relative ">
+                                                <select class="selectpicker select_time form-control" name="to_time"  to="to_time">
+                                                    <option></option>
+                                                    <option>12:30 - 1:00 PM</option>
+                                                    <option>1:00 - 1:30 PM</option>
+                                                    <option>1:30 - 2:30 PM</option>
+                                                    <option>2:30 - 3:00 PM</option>
+                                                    <option>2:30 - 3:00 PM</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p class="note-text mt-3">Note: If one increases the time, then extra charge to be shown.</p>
+                                    </div>
+                                </div>
+                                <div class="next_bar wizard_step3"><a class="default-btn next">next3</a></div>
+                            </fieldset>
+                            <fieldset id="count_information" class="card party-mood partytime_step4 mb-4">
+                                <div class="card-header" id="heading04">
+                                    <button class="btn btn-link btn-block text-left fw-500 disabled" type="button" data-toggle="collapse" data-target="#collapse04" aria-expanded="false" aria-controls="collapse04">
+                                        4. HOW MANY PEOPLE WILL BE THERE?
+                                        <div><img src="images/signin-tick.png" class="img-fluid float-right sign-tick"></div>
+                                    </button>
+                                </div>
+                                <div id="collapse04" class="collapse" aria-labelledby="heading04" data-parent="#myform">
+                                    <div class="card-body">
+                                        <div class="form-group mb-0">
+                                            <input type="number" class="form-control  input-members " name="no_of_people" placeholder="Enter no. of people" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="next_bar wizard_step4"><a class="default-btn next">next4</a></div>
+                            </fieldset>
+                            <fieldset id="package_information" class="card party-mood package_info partytime_step5 mb-4">
+                                <p class="select">SELECT A PACKAGE</p>
+                                <div class="form-group mb-0 payment_radio">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="payment01" name="payment_radio" class="custom-control-input">
+                                        <label class="custom-control-label w-100" for="payment01">
+                                            <div class="d-flex">
+                                                <div class="mr-auto pr-md-4">
+                                                    <p class="package_name">Spice it up’</p>
+                                                    <p class="package_items">Choose 6 pizzas + 4 sides + 4 dessert + 4 drinks</p>
+                                                </div>
+                                                <h6 class="package_price">₹5000</h6>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="payment02" name="payment_radio" class="custom-control-input">
+                                        <label class="custom-control-label w-100" for="payment02">
+                                            <div class="d-flex">
+                                                <div class="mr-auto pr-md-4">
+                                                    <p class="package_name">Rock n’ Roll</p>
+                                                    <p class="package_items">Choose 6 pizzas + 4 sides + 4 dessert + 4 drinks</p>
+                                                </div>
+                                                <h6 class="package_price">₹3000</h6>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="payment03" name="payment_radio" class="custom-control-input">
+                                        <label class="custom-control-label w-100" for="payment03">
+                                            <div class="d-flex">
+                                                <div class="mr-auto pr-md-4">
+                                                    <p class="package_name">Simply Sober’</p>
+                                                    <p class="package_items">Choose 6 pizzas + 4 sides + 4 dessert + 4 drinks</p>
+                                                </div>
+                                                <h6 class="package_price">₹2000</h6>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="next_bar wizard_step5"><a class="default-btn next">next5</a></div>
+                            </fieldset>
+                            
+                        </form>
+                    </div>
+                    <div class="col-md-5 pl-76 d_sm_none">
+                        <div class="bg-flowers">
+                            <div><img class="img-fluid" src="images/bokee.png" alt=""></div>
+                            <p class="fs-20 fw-600 prep-party mt-md-5">Let’s prep for party!</p>
+                            <p class="fw-500 mt-md-2 life-short">Life is short, wear your party pants.</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer_sec">
+              <div class="container">
+                <div class="row mw-1000">
+                  <div class="col-md-6">
+                    <div class="img_col">
+                      <div class="d-flex mb-5">
+                        <div class="img_text">
+                          <img src="images/yellow.png" class="immg-fluid">
+                          <h6>Win</h6>
+                        </div>
+                        <div class="img_para">
+                          <p>Describe our concept in 100 words and win a meal for yourself and your loved one.</p>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-5">
+                        <div class="img_text">
+                          <img src="images/red.png" class="immg-fluid">
+                          <h6>Rate</h6>
+                        </div>
+                        <div class="img_para">
+                          <p>Rate your favourite Pizza so we can surprise you when you’re feeling low</p>
+                        </div>
+                      </div>
+                      <div class="d-flex win-rate ">
+                        <div class="img_text">
+                          <img src="images/blue.png" class="immg-fluid">
+                          <h6>Share</h6>
+                        </div>
+                        <div class="img_para">
+                          <p>Sharing with loved ones is the best thing there can be. Let’s share Love & Pizzas.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 link-giftss">
+                    <div class="row">
+                      <div class="col-md-6 col-5">
+                        <ul class="links">
+                          <h6>Links</h6>
+                          <li>Gift A Cart</li>
+                          <li>Party Time</li>
+                          <li>About Us</li>
+                          <li>Covid Shield</li>
+                        </ul>
+      
+                      </div>
+                      <div class="col-md-6 col-6">
+                        <ul class="links">
+                          <h6>Reach Us</h6>
+                          <li><a href= "">+91 9292925353</a></li>
+                          <li><a href="">hi@mylovetriangle.pizza</a></li>
+                          <li class="social_links">
+                            <a href=" "><img src="images/fb.png" class="img-fluid"></a>
+                            <a href=" "><img src="images/insta.png" class="img-fluid"></a>
+                            <a href=" "><img src="images/whatsapp.png" class="img-fluid"></a>		
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <input type="text" class="deliver_srch" placeholder="Get Goodness Delivered">
+                      <button type="button" class="subscribe_btn default-btn">Subscribe</button>
+                    </div> 				
+                  </div>
+                </div>
+              </div>
+              <div class="links_sec"></div>
+            </div>
+            <div class="baking_sec">
+              <div class="container">
+                <div class="row mw-1000 bdr--btm">
+                  <div class="col-md-7 baking_text d-md-flex">
+                    <div>
+                      <span>Baking</span>
+                      <h3 >in a moving car</h3>
+                    </div>
+                    <div class="baking_word">	
+                      <h3>that’s our</h3>
+                      <span>Superpower</span>
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                    <!-- <img src="images/truck_before.png" class="img-fluid truck_before"> -->
+                    <div class="position-relative truck_footer">
+                      <img src="images/footer_truck.png" class="img-fluid  ">
+                    </div>	
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="copyright">
+              <div class="container">
+                <div class="row mw-1000">
+                  <div class="col-md-6">
+                    <a href=" ">Copyrights © 2021 @mylovetriangle</a>
+                  </div>
+                  <div class="col-md-4 col-6">
+                    <a href=" ">terms & Conditions</a>
+                  </div>
+                  <div class="col-md-2 col-6">
+                    <a href="">privacy policy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrapValidator.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+  <script src="js/custom.js"></script>
+
+<script>
+
+$(".occasion-party input[type='radio']").on("change", function() {
+   if ($(".others").is(':checked')) {
+     $('.others_field').show();
+   } else {
+     $('.others_field').hide();
+   }
+});
+
+$.validator.addMethod("usernameRegex", function(value, element) {
+  return this.optional(element) || /^[a-zA-Z0-9]*$/i.test(value);
+}, "Username must contain only letters, numbers");
+
+$(".next").click(function(){
+  var form = $("#myform");
+  form.validate({
+    errorElement: 'span',
+    errorClass: 'help-block',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.form-group').addClass("has-error");
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.form-group').removeClass("has-error");
+      $(element).closest('.form-group').addClass("has-success");
+    },
+    rules: {
+        occation: {
+            required: true,
+        },
+        other_occassion:{
+            required: true, 
+        },
+        today_tomorrow: {
+            required: true,
+        },
+        from_time: {
+            required: true,
+        }, 
+        to_time: {
+            required: true,
+        }, 
+        no_of_people: {
+            required: true,
+        }, 
+        payment_radio: {
+            required: true,
+        },    
+    },
+    messages: {
+        occation : {
+            required: "Please select occation",
+        },
+        other_occassion: {
+            required: "Please mention other occation",
+        },
+        today_tomorrow : {
+            required: "Please select when is party",
+        },
+        from_time : {
+            required: "Please select from time",
+        },
+        to_time : {
+            required: "Please select to time",
+        },
+        no_of_people : {
+            required: "Please enter no of people",
+        },
+        payment_radio: {
+            required: "Please select your package"
+        }
+    }
+  });
+  if (form.valid() === true){
+    if ($(".partytime_step1 .btn-link").attr("aria-expanded") == "true"){ 
+      
+      $(".partytime_step1 .btn-link").attr("aria-expanded","false");
+      $('.partytime_step1 .collapse').removeClass('show');
+      $('.wizard_step1').hide();
+
+      $(".partytime_step2 .btn-link").attr("aria-expanded","true");
+      $('.partytime_step2 .collapse').addClass('show');
+      $('.partytime_step2 .btn-link').removeClass('disabled');
+      next_fs = $('.wizard_step2');
+      $(".progress-bar").css("width", "40%");
+
+    }else if($(".partytime_step2 .btn-link").attr("aria-expanded") == "true"){  
+    
+      $(".partytime_step2 .btn-link").attr("aria-expanded","false");
+      $('.partytime_step2 .collapse').removeClass('show');
+      $('.wizard_step2').hide();
+
+      $(".partytime_step3 .btn-link").attr("aria-expanded","true");
+      $('.partytime_step3 .collapse').addClass('show');
+      $('.partytime_step3 .btn-link').removeClass('disabled');
+      next_fs = $('.wizard_step3');
+      $(".progress-bar").css("width", "60%");
+      
+    }else if($(".partytime_step3 .btn-link").attr("aria-expanded") == "true"){  
+    
+    $(".partytime_step3 .btn-link").attr("aria-expanded","false");
+    $('.partytime_step3 .collapse').removeClass('show');
+    $('.wizard_step3').hide();
+
+    $(".partytime_step4 .btn-link").attr("aria-expanded","true");
+    $('.partytime_step4 .collapse').addClass('show');
+    $('.partytime_step4 .btn-link').removeClass('disabled');
+    next_fs = $('.wizard_step4');
+    $(".progress-bar").css("width", "80%");
+    
+  }else if($(".partytime_step4 .btn-link").attr("aria-expanded") == "true"){  
+    
+    $(".partytime_step4 .btn-link").attr("aria-expanded","false");
+    $('.partytime_step4 .collapse').removeClass('show');
+    $('.wizard_step4').hide();
+    $('.wizard_step5').show();
+    $('#occasion_information').hide();
+    $('#party_information').hide();
+    $('#time_information').hide();
+    $('#count_information').hide();
+
+    next_fs = $('#package_information');
+    $(".progress-bar").css("width", "100%");
+    
+  }
+    next_fs.show(); 
+    current_fs.hide();
+  }
+});
+
+
+$('.partytime_step1 .btn-link').click(function(){
+    if ($(".partytime_step1 .btn-link").attr("aria-expanded") == "false"){ 
+        $(".progress-bar").css("width", "20%");
+        $('.wizard_step1').show();
+        $('.wizard_step2').hide();
+        $('.wizard_step3').hide();
+        $('.wizard_step4').hide();
+    }
+});
+
+$('.partytime_step2 .btn-link').click(function(){
+    if ($(".partytime_step2 .btn-link").attr("aria-expanded") == "false"){ 
+        $(".progress-bar").css("width", "40%");
+        $('.wizard_step2').show();
+        $('.wizard_step1').hide();
+        $('.wizard_step3').hide();
+        $('.wizard_step4').hide();
+    }
+});
+$('.partytime_step3 .btn-link').click(function(){
+    if ($(".partytime_step3 .btn-link").attr("aria-expanded") == "false"){ 
+        $(".progress-bar").css("width", "60%");
+        $('.wizard_step3').show();
+        $('.wizard_step1').hide();
+        $('.wizard_step2').hide();
+        $('.wizard_step4').hide();
+    }
+});
+
+$('.partytime_step4 .btn-link').click(function(){
+    if ($(".partytime_step4 .btn-link").attr("aria-expanded") == "false"){ 
+        $(".progress-bar").css("width", "80%");
+        $('.wizard_step4').show();
+        $('.wizard_step1').hide();
+        $('.wizard_step2').hide();
+        $('.wizard_step3').hide();
+    }
+});
+
+    
+
+</script>
+
+</body>
+
+</html>

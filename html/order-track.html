@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <title>Order-track</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header_sec listing_header">
+    	<nav class="navbar navbar-expand-lg navbar-light header_color px-md-0">
+    		<div class="container">
+          <img src="images/logo.png" class="img-fluid logo_img">
+          <div class="d--none position-relative">
+            <div class="d-flex address_info cursor-pointer"  data-toggle="modal" data-target="#locationModal">
+              <div><img src="images/location.png" class="img-fluid"></div>
+              <span>Haryana</span>
+              <!-- <p class="min-max-991">Tower-A, Flat no. 854,...</p> -->
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img class="hamberger" src="images/Hamburger.png">
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="desktop-menu ml-auto">
+              <ul class="navbar-nav ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Corporate Tie Up <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Party Time</a>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn_signin ml-4" type="button" data-toggle="modal" data-target="#loginmodal">Sign In</button>
+                </li>
+                <li class="nav-item">
+                  <a href=""><img  src="images/empty.png" class="img-fluid empoty"></a>
+                </li>
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle px-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="images/Hamburger.png" class="img-fluid">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/gift-cart-menu.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">Gift A Cart</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/glass.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">Party Time</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/corporate.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">Corporate Tie Up</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/about.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">About Us</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a>
+                      <!-- <a class="dropdown-item d-flex" href="#"> 
+                        <div><img src="images/my-account.png"></div>
+                        <p class="ml-4 pl-1 align-self-center pt-1">My Account</p>
+                        <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                      </a> -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="side-menu">
+              <ul class="navbar-nav">
+                <div class="d-flex side-bottom pb-4 ">
+                  <div>
+                    <!-- <img src="images/sidemenuprofile.png" class="img-fluid profile-image"> -->
+                    <img src="images/empty.png" class="img-fluid profile-image">
+                  </div>
+                  <!-- <div class="">
+                    <h1 class="profile-text pl-3 mb-2">Ravina Malik</h1>
+                    <p><span>Click</span> to view or edit account details</p>
+                  </div> -->
+                  <div class="">
+                    <h1 class="profile-text pl-3 mb-2">Welcome!</h1>
+                    <p class="fw-500"><span class="mr-2">Sign In</span> or <span class="ml-2">Sign Up</span></p>
+                  </div>
+                  <img src="images/cross.png" class="img-fluid ml-auto cross">
+                </div>
+                <!-- active  -->
+                <li class="nav-item ">
+                  <a class="nav-link" href="#"><img src="images/gift.png">Gift A Cart</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#"><img src="images/glass.png">Party Time</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#"><img src="images/corporate.png">Corporate Tie Up</a>
+                </li>
+                <li class="nav-item accordion my--account" id="accordionExample">
+                  <div class="card">
+                    <div class="" id="headingTwo">
+                        <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <a class="nav-link" href="#"><img src="images/my-account.png">My Profile</a>
+                        </button>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body pb-0">
+                        <div class="nav-item ">
+                          <a class="nav-link" href="#"><img src="images/clock.png">Order History</a>
+                        </div>
+                        <div class="nav-item ">
+                          <a class="nav-link" href="#"><img src="images/saved-address.png"> Saved Address</a>
+                        </div>
+                        <div class="nav-item ">
+                          <a class="nav-link" href="#"><img src="images/favourites.png"> Favourites</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item  ">
+                  <a class="nav-link" href="#"><img src="images/about.png">About Us</a>
+                </li>
+                <li class="nav-item  ">
+                  <a class="nav-link" href="#"><img src="images/contact.png">Contact Us</a>
+                </li>
+                
+              </ul>
+              <ul class="navbar-nav mb-0 ">
+                <li class="nav-item side-bottom-footer">
+                  <a class="nav-link" href="#"><img src="images/logout.png">Logout</a>
+                </li>
+                <li><a class="terms mb-2" href="#">Terms</a></li>
+                <li><a class="terms mb-2" href="#">Privacy Policy</a></li>
+                <li><a class="version" href="#">Version 0.1.02</a></li>
+              </ul>
+              <div>
+                
+              </div>
+            </div>
+          </div>
+		  	</div>
+        
+           
+		  </nav>
+    </header>
+    <!-- Location Modal -->
+    <div class="location-card">
+      <div class="location-card-overlay"></div>
+      <div class="d-flex">
+        <p class="mr-auto fw-500">Location</p>
+        <div><img class="close-card cursor-pointer" data-dismiss="modal" aria-label="Close" src="images/close.png" alt=""></div>
+      </div>
+      <p class="pr-md-4 pt-3 we_currently">We are currently delivering in Gurugram phase 1 to 5 only*</p>
+      <form class="custom-form mt-3 location-search" action="">
+        <div class="form-group">
+          <input type="text" id="project" class="form-control location_search" placeholder="Enter delivering location">
+          <input type="hidden" id="project-id">
+          <p id="project-description"></p>
+        </div>
+      </form>
+      <div class="d-flex use_currext">
+        <div><img class="" src="images/location-yellow.png"></div>
+        <p>Use Current Location</p>
+      </div>
+      <div class="saved_locations ">
+        <div class="d-flex loc_viewall mb-4 pb-2">
+          <p class="p-sec mr-auto">Select from Saved Locations</p>
+          <a href="#">View All</a>
+        </div>
+        <div class="form-group saved_addresses">
+          <div class="custom-control custom-radio pl-0">
+            <input type="radio" id="savedAddress" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="savedAddress">
+              <div class="d-flex home-address">
+                <div class="mr-2 pr-1"><img src="images/home1.png" alt=""></div>
+                <div>
+                  <p class="fw-600 home">Home</p>
+                  <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="custom-control custom-radio pl-0">
+            <input type="radio" id="savedAddress1" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="savedAddress1">
+              <div class="d-flex home-address">
+                <div class="mr-2 pr-1"><img src="images/work.png" alt=""></div>
+                <div>
+                  <p class="fw-600 home">Work</p>
+                  <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Location Modal -->
+    
+    <section class="order_track">
+        <div class="container">
+          <div class="d-flex d_md_none">
+            <div class="ml-3">
+                <a href="#" class="back_btn"data-dismiss="modal" aria-label="Close "><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+            </div>
+            <p class="add-adres trck-delivary fw-600 align-self-center text-center w-100">TRACK DELIVERY</p>
+            
+        </div>
+          <p class="trck-delivary d_sm_none fw-600">TRACK DELIVERY</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- <iframe class="dark_map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15404.472405235523!2d76.9235952!3d15.1518574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18c372bfcb045df9!2sCODEBELE!5e0!3m2!1sen!2sin!4v1633417247508!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                    <div id="map" class="order_track_map"></div> 
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2" async ></script>
+
+                            Latitude <input type="text" id="la" name="latitude" value="15.151857"> <br>
+                            Longitude<input type="text" id="lo" name="longitude" value="76.923595">
+                </div>
+                <div class="col-md-6">
+                  <!-- is-done current -->
+                    <ul class="StepProgress ">
+                        <li class="StepProgress-item stepOne  ">
+                            <img class="step_img" src="images/confirmed.png">
+                            <p>Order Confirmed</p>
+                            <p class="p-sec has-confimed">Your order has been confirmed!</p>
+                        </li>
+                        <li class="StepProgress-item stepTwo ">
+                            <img class="step_img" src="images/delivery.png">
+                            
+                            <p class="">Out for Delivery</p>
+                            <p class="delivery-min fs-20">Delivery in 25 mins</p>
+                           
+                            <p class="p-sec has-confimed">We are on the way, baking your pizza fresh and live!</p>
+                        </li>
+                        <li class="StepProgress-item stepThree">
+                            <p>Order Delivered</p>
+                        </li>
+                    </ul>
+                    <div class="d-flex trcak-pad">
+                      <button class="default-btn trcak-detalis fw-600">View Order Details</button>
+                      <button class="default-btn refer-cart fw-600">Refer/Gift a Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="">
+      <div class="footer_sec">
+        <div class="container">
+          <div class="row mw-1000">
+            <div class="col-md-6">
+              <div class="img_col">
+                <div class="d-flex mb-5">
+                  <div class="img_text">
+                    <img src="images/yellow.png" class="immg-fluid">
+                    <h6>Win</h6>
+                  </div>
+                  <div class="img_para">
+                    <p>Describe our concept in 100 words and win a meal for yourself and your loved one.</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-5">
+                  <div class="img_text">
+                    <img src="images/red.png" class="immg-fluid">
+                    <h6>Rate</h6>
+                  </div>
+                  <div class="img_para">
+                    <p>Rate your favourite Pizza so we can surprise you when you’re feeling low</p>
+                  </div>
+                </div>
+                <div class="d-flex win-rate ">
+                  <div class="img_text">
+                    <img src="images/blue.png" class="immg-fluid">
+                    <h6>Share</h6>
+                  </div>
+                  <div class="img_para">
+                    <p>Sharing with loved ones is the best thing there can be. Let’s share Love & Pizzas.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 link-giftss">
+              <div class="row">
+                <div class="col-md-6 col-5">
+                  <ul class="links">
+                    <h6>Links</h6>
+                    <li>Gift A Cart</li>
+                    <li>Party Time</li>
+                    <li>About Us</li>
+                    <li>Covid Shield</li>
+                  </ul>
+
+                </div>
+                <div class="col-md-6 col-6">
+                  <ul class="links">
+                    <h6>Reach Us</h6>
+                    <li><a href= "">+91 9292925353</a></li>
+                    <li><a href="">hi@mylovetriangle.pizza</a></li>
+                    <li class="social_links">
+                      <a href=" "><img src="images/fb.png" class="img-fluid"></a>
+                      <a href=" "><img src="images/insta.png" class="img-fluid"></a>
+                      <a href=" "><img src="images/whatsapp.png" class="img-fluid"></a>		
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex">
+                <input type="text" class="deliver_srch" placeholder="Get Goodness Delivered">
+                <button type="button" class="subscribe_btn">Subscribe</button>
+              </div> 				
+            </div>
+          </div>
+        </div>
+        <div class="links_sec"></div>
+      </div>
+      <div class="baking_sec">
+        <div class="container">
+          <div class="row mw-1000 bdr--btm">
+            <div class="col-md-7 baking_text d-md-flex">
+              <div>
+                <span>Baking</span>
+                <h3 >in a moving car</h3>
+              </div>
+              <div class="baking_word">	
+                <h3>that’s our</h3>
+                <span>Superpower</span>
+                </div>
+            </div>
+            <div class="col-md-5">
+              <!-- <img src="images/truck_before.png" class="img-fluid truck_before"> -->
+              <div class="position-relative truck_footer">
+                <img src="images/footer_truck.png" class="img-fluid  ">
+              </div>	
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="row mw-1000">
+            <div class="col-md-6">
+              <a href=" ">Copyrights © 2021 @mylovetriangle</a>
+            </div>
+            <div class="col-md-4 col-6">
+              <a href=" ">terms & Conditions</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <a href="">privacy policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  
+  </div>
+
+
+ 
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrapValidator.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+        
+
+    var latitude = Number(document.getElementById("la").value);
+    var longitude = Number(document.getElementById("lo").value);
+    
+    function initMap() {
+      var uluru = {
+        lat: latitude,
+        lng: longitude
+      };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: uluru,
+        styles: [
+          { elementType: "geometry", stylers: [{ color: "#343332" }] },
+          { elementType: "labels.text.stroke", stylers: [{ color: "#343332" }] },
+          { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+          // {
+          //   featureType: "administrative.locality",
+          //   elementType: "labels.text.fill",
+          //   stylers: [{ color: "#343332" }],
+          // },
+          // {
+          //   featureType: "poi",
+          //   elementType: "labels.text.fill",
+          //   stylers: [{ color: "#343332" }],
+          // },
+          // {
+          //   featureType: "poi.park",
+          //   elementType: "geometry",
+          //   stylers: [{ color: "#343332" }],
+          // },
+          // {
+          //   featureType: "poi.park",
+          //   elementType: "labels.text.fill",
+          //   stylers: [{ color: "#685f50" }],
+          // },
+          {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [{ color: "#454545" }],
+          },
+          {
+            featureType: "road",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#343332" }],
+          },
+          {
+            featureType: "road",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#343332" }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry",
+            stylers: [{ color: "#343332" }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#343332" }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#343332" }],
+          },
+          // {
+          //   featureType: "transit",
+          //   elementType: "geometry",
+          //   stylers: [{ color: "#343332" }],
+          // },
+          // {
+          //   featureType: "transit.station",
+          //   elementType: "labels.text.fill",
+          //   stylers: [{ color: "#343332" }],
+          // },
+          // {
+          //   featureType: "water",
+          //   elementType: "geometry",
+          //   stylers: [{ color: "#343332" }],
+          // },
+          // {
+          //   featureType: "water",
+          //   elementType: "labels.text.fill",
+          //   stylers: [{ color: "#343332;" }],
+          // },
+          // {
+          //   featureType: "water",
+          //   elementType: "labels.text.stroke",
+          //   stylers: [{ color: "#343332" }],
+          // },
+        ],
+      });
+      var iconBase = '../html/images/';
+      marker = new google.maps.Marker({
+        position: uluru,
+        animation: google.maps.Animation.DROP,
+        map: map,
+        draggable: true,
+        icon: iconBase + 'location_pin.png'
+        //title: "Hello World!",
+      });
+      google.maps.event.addListener(marker, 'dragend',
+        function(marker) {
+            console.log(marker)
+        //   currentLatitude = marker.position.lat();
+        //   currentLongitude = marker.position.lng();
+        //   $("#la").val(currentLatitude);
+        //   $("#lo").val(currentLongitude);
+        }
+      );
+    }
+
+
+</script>
+</body>
+</html>

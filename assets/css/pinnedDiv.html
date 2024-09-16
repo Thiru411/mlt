@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Looped &quot;Scrolling&quot; Section Transitions - ScrollTrigger</title>
+  <link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400,600' rel='stylesheet' type='text/css'>
+  
+  <link rel='stylesheet' href='https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.css'>
+  
+<style>
+html, body {
+  height: 100%;
+}
+body { 
+  font-size: 18px;
+  font-weight: 300;
+}
+.panel {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+section:not(.first) {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <section class="first panel blue">
+  <h1>Looped "Scrolling" Section Transitions</h1>
+  <div class="scroll-down">Scroll up or down<div class="arrow"></div></div>
+</section>
+<section class="panel red">
+  <h1>Hey look, another section</h1>
+</section>
+<section class="panel orange">
+  <h1>These sections just keep coming</h1>
+</section>
+<section class="panel purple">
+  <h1>Nice transitions though</h1>
+</section>
+<section class="panel green">
+  <h1>How about we go back to the start after this?</h1>
+</section>
+
+
+
+
+<header>
+   <a href="https://greensock.com/scrolltrigger">
+     <img class="greensock-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg" width="200" height="64" />
+  </a> 
+</header>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
+      <script id="rendered-js" >
+let sections = gsap.utils.toArray("section"),
+currentSection = sections[0];
+
+gsap.defaults({ overwrite: 'auto', duration: 0.3 });
+
+// stretch out the body height according to however many sections there are. 
+gsap.set("body", { height: sections.length * 100 + "%" });
+
+// create a ScrollTrigger for each section
+sections.forEach((section, i) => {
+  ScrollTrigger.create({
+    // use dynamic scroll positions based on the window height (offset by half to make it feel natural)
+    start: () => (i - 0.5) * innerHeight,
+    end: () => (i + 0.5) * innerHeight,
+    // when a new section activates (from either direction), set the section accordinglyl.
+    onToggle: self => self.isActive && setSection(section) });
+
+});
+
+function setSection(newSection) {
+  if (newSection !== currentSection) {
+    gsap.to(currentSection, { scale: 0.8, autoAlpha: 0 });
+    gsap.to(newSection, { scale: 1, autoAlpha: 1 });
+    currentSection = newSection;
+  }
+}
+
+// handles the infinite part, wrapping around at either end....
+ScrollTrigger.create({
+  start: 1,
+  end: () => ScrollTrigger.maxScroll(window) - 1,
+  onLeaveBack: self => self.scroll(ScrollTrigger.maxScroll(window) - 2),
+  onLeave: self => self.scroll(2) }).
+scroll(2);
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 

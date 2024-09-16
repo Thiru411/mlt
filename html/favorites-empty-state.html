@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <title>Favorities Empty  State</title>
+    <style>
+    .empty-state{padding:50px 0;}
+    .emptystate-header{text-transform: uppercase;color: #5FC2AE;letter-spacing: 1px;line-height: 1.5;}
+    .emptystate-text{line-height: 1.5;color: #FFFFFF;padding-bottom: 80px;}
+    .emptystate-line{border: 1px solid #E0AF02;transform: rotate(90deg);width: 100%;max-width: 80px;margin: 0 auto;}
+    .explore_btn{color: #000000;font-size: 16px;line-height: 1.25;background: #5FC2AE;border-radius: 8px;opacity: 0.8;padding: 14px 32px;margin-top:80px;border: 0;}
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header_sec">
+            <nav class="navbar navbar-expand-lg navbar-light header_color px-md-0">
+                <div class="container">
+                    <img src="images/logo.png" class="img-fluid logo_img">
+                    <div class="d--none">
+                        <div class="d-flex address_info">
+                            <img src="images/location.png" class="img-fluid">
+                            <span>Home</span>
+                            <p>Tower-A, Flat no. 854,...</p>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="images/Hamburger.png">
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="desktop-menu ml-auto">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Corporate Tie Up <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ml-5" href="#">Party Time</a>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="btn btn_signin " type="button">Sign In</button>
+                                </li>
+                                <li class="nav-item">
+                                    <a href=""><img src="images/Hamburger.png" class="img-fluid"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="side-menu">
+                            <ul class="navbar-nav">
+                                <div class="d-flex side-bottom pb-4 ">
+                                    <div><img src="images/sidemenuprofile.png" class="img-fluid profile-image"></div>
+                                    <div class="">
+                                        <h1 class="profile-text pl-3 mb-2">Ravina Malik</h1>
+                                        <p>Your account details and settings</p>
+                                    </div>
+                                    <img src="images/cross.png" class="img-fluid ml-auto cross">
+                                </div>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#"><img src="images/heart.png"> Favourites</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#"><img src="images/clock.png">Order History</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#"><img src="images/gift.png">Gift A Cart</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#"><img src="images/glass.png">Party Time</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#"><img src="images/corporate.png">Corporate Tie Up</a>
+                                </li>
+                                <li class="nav-item active ">
+                                    <a class="nav-link" href="#"><img src="images/profile.png">My Profile</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link ml-5" href="#">Logout</a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a class="nav-link" href="#"><img src="images/about.png">About Us</a>
+                                </li>
+                                <li class="nav-item  side-bottom-footer">
+                                    <a class="nav-link" href="#"><img src="images/contact.png">Contact Us</a>
+                                </li>
+                            </ul>
+                            <div>
+                                <div><a class="terms mb-2" href="#">Terms</a></div>
+                                <div><a class="terms mb-2" href="#">Privacy Policy</a></div>
+                                <div><a class="version" href="#">Version 0.1.02</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="mt-5">
+            <div class="container">
+                <div class="media pizzaas-box position-relative">
+                    <img class="pizza-banner img-fluid" src="images/brp.png" alt="">
+                    <div class="media-body pizza-details pt-md-5">
+                      <div class="d-flex ">
+                        <div class="green-dot align-self-center"> <img src="images/dot.png" alt=""></div>
+                        <h5 class="fmg-maggi align-self-center">BRP -
+                          <span class="for-maggi align-self-center">BIANCA ROYALE</span>
+                        </h5>
+          
+                        <div class="like-heart ml-auto">
+                          <img class=" img-fluid  heart" src="images/heart.png" alt="">
+                          <img class="img-fluid red-heart click-heart" src="images/red heart.png" alt="">
+                        </div>
+                      </div>
+                      <p class="bright mt-md-3 mt-2">Bright & acidic with a creamy tang Legend has it that this iconic pizza was
+                        created
+                        in 1889. Bright & acidic with a creamy tang Legend has it that this iconic pizza was created in 1889.</p>
+                      <div class="mx-500">
+                        <div class="d-flex choose-it mt-md-4 ">
+                          <div class="col-md-6 select-size">
+                            <select class="selectpicker size-base">
+                              <option>Select Size</option>
+                              <option>Small</option>
+                              <option>Medium</option>
+                              <option>Large</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6 select-size">
+                            <select class="selectpicker size-base">
+                              <option>Select Base</option>
+                              <option>Small</option>
+                              <option>Medium</option>
+                              <option>Large</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="d-flex cost ">
+                          <h3 class="price">₹480</h3>
+                          <p class="taxes ml-md-2 mt-3">incl. taxes</p>
+                          <button class="default-btn fs-20 ml-auto add-cart ">Add <span class="pluse">+</span></button>
+                          <div class="add-sub inc-dec ">
+                            <div id="field1" class="field1 d-flex ml-4">
+                              <button type="button" id="sub" class="sub"><img src="images/minus.png"></button>
+                              <input type="number" id="1" class="num" value="1" min="1" max="10000">
+                              <button type="button" id="add" class="add"><img src="images/plus.png"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="button" class=" default-btn custooo-mize" data-toggle="modal" data-target="#customizeModal">
+                          Customize
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                <div class="media pizzaas-box position-relative no-customize">
+                    <img class="pizza-banner img-fluid" src="images/baz.png" alt="">
+                    <div class="media-body pizza-details pt-md-5 ">
+                    <div class="d-flex  ">
+                        <div class="green-dot align-self-center"> <img src="images/dot.png" alt=""></div>
+                        <h5 class="fmg-maggi align-self-center">BAZ -
+                        <span class="for-maggi align-self-center">BASIL ELDERFLOWER SPRITZER</span>
+                        </h5>
+        
+                        <div class="like-heart ml-auto">
+                        <img class=" img-fluid  heart" src="images/heart.png" alt="">
+                        <img class="img-fluid red-heart click-heart" src="images/red heart.png" alt="">
+                        </div>
+                    </div>
+                    <p class="bright mt-md-3 mt-2">Fresh basil infused in a sparkling combination of delicate elderflower syrup, aerated water, and a dash of lime. Light, refreshing, and just a tad bit sweet.</p>
+                    <div class="mx-500">
+                        <!-- <div class="d-flex choose-it mt-md-4">
+                        <div class="col-md-6 select-size">
+                            <select class="selectpicker size-base">
+                            <option>Select Size</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 select-size">
+                            <select class="selectpicker size-base">
+                            <option>Select Base</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                            </select>
+                        </div>
+                        </div> -->
+                        <div class="d-flex cost ">
+                        <h3 class="price">₹480</h3>
+                        <p class="taxes ml-md-2 mt-3">incl. taxes</p>
+                        <button class="default-btn fs-20 ml-auto add-cart ">Add <span class="pluse">+</span></button>
+                        <div class="add-sub inc-dec ">
+                            <div id="field1" class="field1 d-flex ml-4">
+                                <button type="button" id="sub" class="sub"><img src="images/minus.png"></button>
+                                <input type="number" id="1" class="num" value="1" min="1" max="10000">
+                                <button type="button" id="add" class="add"><img src="images/plus.png"></button>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- <button type="button" class="btn btn-primary default-btn custooo-mize" data-toggle="modal" data-target="#customizeModal">
+                        Customize
+                        </button> -->
+                    
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="empty-state">
+            <div class="container">
+                <div class="text-center">
+                    <div class="img-fluid mb-4 pb-3"><img src="images/fav truck.png" ></div>
+                    <p class="emptystate-header fs-20 fw-600 mb-4">It’s Quite deserted here!</p>
+                    <p class="emptystate-text fw-500 ">
+                        You haven’t added any favourites yet.
+                    </p>
+                    <div class="emptystate-line ">
+
+                    </div>
+                    <button type="button" class="explore_btn fw-600">Explore Menu</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <footer>
+            <div class="footer_sec">
+                <div class="container">
+                    <div class="row mw-1000">
+                        <div class="col-md-6">
+                            <div class="img_col">
+                                <div class="d-flex mb-5">
+                                    <div class="img_text">
+                                        <img src="images/yellow.png" class="immg-fluid">
+                                        <h6>Win</h6>
+                                    </div>
+                                    <div class="img_para">
+                                        <p>Describe our concept in 100 words and win a meal for yourself and your loved
+                                            one.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-5">
+                                    <div class="img_text">
+                                        <img src="images/red.png" class="immg-fluid">
+                                        <h6>Rate</h6>
+                                    </div>
+                                    <div class="img_para">
+                                        <p>Rate your favourite Pizza so we can surprise you when you’re feeling low</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex ">
+                                    <div class="img_text">
+                                        <img src="images/blue.png" class="immg-fluid">
+                                        <h6>Share</h6>
+                                    </div>
+                                    <div class="img_para">
+                                        <p>Sharing with loved ones is the best thing there can be. Let’s share Love &
+                                            Pizzas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="links">
+                                        <h6>Links</h6>
+                                        <li>Gift A Cart</li>
+                                        <li>Party Time</li>
+                                        <li>About Us</li>
+                                        <li>Covid Shield</li>
+                                    </ul>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="links">
+                                        <h6>Reach Us</h6>
+                                        <li><a href="">+91 9292925353</a></li>
+                                        <li><a href="">hi@mylovetriangle.pizza</a></li>
+                                        <li class="social_links">
+                                            <a href=" "><img src="images/fb.png" class="img-fluid"></a>
+                                            <a href=" "><img src="images/insta.png" class="img-fluid"></a>
+                                            <a href=" "><img src="images/whatsapp.png" class="img-fluid"></a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <input type="text" class="deliver_srch" placeholder="Get Goodness Delivered">
+                                <button type="button" class="subscribe_btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="links_sec"></div>
+            </div>
+            <div class="baking_sec">
+                <div class="container">
+                    <div class="row mw-1000 bdr--btm">
+                        <div class="col-md-7 baking_text">
+                            <div>
+                                <span>Baking</span>
+                                <h3>in a moving car</h3>
+                            </div>
+                            <div class="baking_word">
+                                <h3>that’s our</h3>
+                                <span>Superpower</span>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <!-- <img src="images/truck_before.png" class="img-fluid truck_before"> -->
+                            <div class="position-relative truck_footer">
+                                <img src="images/footer_truck.png" class="img-fluid  ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row mw-1000">
+                        <div class="col-md-6">
+                            <a href=" ">Copyrights © 2021 @mylovetriangle</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href=" ">terms & Conditions</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="">privacy policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/custom.js"></script>
+    
+
+</body>
+
+</html>

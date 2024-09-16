@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        #ui-id-2{ height: 324px;width: 401px !important;padding: 30px 0 0 0;overflow-y: auto;z-index: 10000;background: #0A100D;border: 0;}
+        #ui-id-2.ui-menu .ui-menu-item-wrapper{border-bottom: 1px solid rgb(170 174 187 / 16%) !important;padding: 0 0 16px 0;margin: 0 0 16px 0;}
+        #ui-id-2.ui-menu .ui-menu-item-wrapper.ui-state-active{background: linear-gradient(0deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09)), #121212;border: 0;border-color: transparent;}
+        #ui-id-2 .ui-menu-item-wrapper p{font-weight: 600;font-size: 16px;color: #FFFFFA;text-transform: capitalize;line-height: 24px;}
+        #ui-id-2 .ui-menu-item-wrapper span{display: block;font-size: 14px;line-height: 22px;color: rgba(255, 255, 250, 0.8) !important;text-transform: capitalize;font-weight: 400;margin-top: 8px;}
+    
+        @media only screen and (max-width: 426px) {  
+            .modal-backdrop.show {opacity: 1;background: transparent;display: none;}  
+            .close{display: none;}
+            #ui-id-2 .ui-menu-item-wrapper p {  font-size: 12px;  line-height: 18px;}
+            #ui-id-2 { width: 100% !important;  padding: 4px 23px 0 0;}
+            #ui-id-2 .ui-menu-item-wrapper span {    font-size: 12px;    line-height: 18px;}
+        }
+    </style>
+    <title>Coupon page</title>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z3e-xBgzeKw10ou7QQ6NaNfcI3UZ4KM&libraries=places&callback=initMap&v=weekly&channel=2"></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z3e-xBgzeKw10ou7QQ6NaNfcI3UZ4KM&libraries=places&callback=initMap&v=weekly&channel=2"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z3e-xBgzeKw10ou7QQ6NaNfcI3UZ4KM&libraries=places"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header_sec">
+            <nav class="navbar navbar-expand-lg navbar-light header_color px-md-0">
+                <div class="container">
+              <img src="images/logo.png" class="img-fluid logo_img">
+              <div class="d--none position-relative">
+                <div class="d-flex address_info cursor-pointer"  data-toggle="modal" data-target="#locationModal">
+                  <div><img src="images/location.png" class="img-fluid"></div>
+                  <span>Haryana</span>
+                  <!-- <p class="min-max-991">Tower-A, Flat no. 854,...</p> -->
+                </div>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img class="hamberger" src="images/Hamburger.png">
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="desktop-menu ml-auto">
+                  <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Corporate Tie Up <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Party Time</a>
+                    </li>
+                    <li class="nav-item">
+                      <button class="btn btn_signin ml-4" type="button" data-toggle="modal" data-target="#loginmodal">Sign In</button>
+                    </li>
+                    <li class="nav-item">
+                      <a href=""><img  src="images/empty.png" class="img-fluid empoty"></a>
+                    </li>
+                    <li class="nav-item">
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle px-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="images/Hamburger.png" class="img-fluid">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/gift-cart-menu.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">Gift A Cart</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/glass.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">Party Time</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/corporate.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">Corporate Tie Up</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/about.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">About Us</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a>
+                          <!-- <a class="dropdown-item d-flex" href="#"> 
+                            <div><img src="images/my-account.png"></div>
+                            <p class="ml-4 pl-1 align-self-center pt-1">My Account</p>
+                            <div class="ml-auto"><img src="images/dropdown-arrow.png"></div>
+                          </a> -->
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="side-menu">
+                  <ul class="navbar-nav">
+                    <div class="d-flex side-bottom pb-4 ">
+                      <div>
+                        <!-- <img src="images/sidemenuprofile.png" class="img-fluid profile-image"> -->
+                        <img src="images/empty.png" class="img-fluid profile-image">
+                      </div>
+                      <!-- <div class="">
+                        <h1 class="profile-text pl-3 mb-2">Ravina Malik</h1>
+                        <p><span>Click</span> to view or edit account details</p>
+                      </div> -->
+                      <div class="">
+                        <h1 class="profile-text pl-3 mb-2">Welcome!</h1>
+                        <p class="fw-500"><span class="mr-2">Sign In</span> or <span class="ml-2">Sign Up</span></p>
+                      </div>
+                      <img src="images/cross.png" class="img-fluid ml-auto cross">
+                    </div>
+                    <!-- active  -->
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/gift.png">Gift A Cart</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/glass.png">Party Time</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#"><img src="images/corporate.png">Corporate Tie Up</a>
+                    </li>
+                    <li class="nav-item accordion my--account" id="accordionExample">
+                      <div class="card">
+                        <div class="" id="headingTwo">
+                            <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              <a class="nav-link" href="#"><img src="images/my-account.png">My Profile</a>
+                            </button>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                          <div class="card-body pb-0">
+                            <div class="nav-item ">
+                              <a class="nav-link" href="#"><img src="images/clock.png">Order History</a>
+                            </div>
+                            <div class="nav-item ">
+                              <a class="nav-link" href="#"><img src="images/saved-address.png"> Saved Address</a>
+                            </div>
+                            <div class="nav-item ">
+                              <a class="nav-link" href="#"><img src="images/favourites.png"> Favourites</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item  ">
+                      <a class="nav-link" href="#"><img src="images/about.png">About Us</a>
+                    </li>
+                    <li class="nav-item  ">
+                      <a class="nav-link" href="#"><img src="images/contact.png">Contact Us</a>
+                    </li>
+                    
+                  </ul>
+                  <ul class="navbar-nav mb-0 ">
+                    <li class="nav-item side-bottom-footer">
+                      <a class="nav-link" href="#"><img src="images/logout.png">Logout</a>
+                    </li>
+                    <li><a class="terms mb-2" href="#">Terms</a></li>
+                    <li><a class="terms mb-2" href="#">Privacy Policy</a></li>
+                    <li><a class="version" href="#">Version 0.1.02</a></li>
+                  </ul>
+                  <div>
+                    
+                  </div>
+                </div>
+              </div>
+                  </div>
+            
+               
+              </nav>
+        </header>
+        <!-- Location Modal -->
+        <div class="location-card">
+          <div class="location-card-overlay"></div>
+          <div class="d-flex">
+            <p class="mr-auto fw-500">Location</p>
+            <div><img class="close-card cursor-pointer" data-dismiss="modal" aria-label="Close" src="images/close.png" alt=""></div>
+          </div>
+          <p class="pr-md-4 pt-3 we_currently">We are currently delivering in Gurugram phase 1 to 5 only*</p>
+          <form class="custom-form mt-3 location-search" action="">
+            <div class="form-group">
+              <input type="text" id="project" class="form-control location_search" placeholder="Enter delivering location">
+              <input type="hidden" id="project-id">
+              <p id="project-description"></p>
+            </div>
+          </form>
+          <div class="d-flex use_currext">
+            <div><img class="" src="images/location-yellow.png"></div>
+            <p>Use Current Location</p>
+          </div>
+          <div class="saved_locations ">
+            <div class="d-flex loc_viewall mb-4 pb-2">
+              <p class="p-sec mr-auto">Select from Saved Locations</p>
+              <a href="#">View All</a>
+            </div>
+            <div class="form-group saved_addresses">
+              <div class="custom-control custom-radio pl-0">
+                <input type="radio" id="savedAddress" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="savedAddress">
+                  <div class="d-flex home-address">
+                    <div class="mr-2 pr-1"><img src="images/home1.png" alt=""></div>
+                    <div>
+                      <p class="fw-600 home">Home</p>
+                      <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="custom-control custom-radio pl-0">
+                <input type="radio" id="savedAddress1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="savedAddress1">
+                  <div class="d-flex home-address">
+                    <div class="mr-2 pr-1"><img src="images/work.png" alt=""></div>
+                    <div>
+                      <p class="fw-600 home">Work</p>
+                      <p class="p-sec pt-2 fw-400 limit-one-line">Tower-A, Flat no. 854, Grand View Tower-A, Flat no. 854, Grand View</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Location Modal -->
+
+        <section class="coupon-page">
+            <div class="container ">
+                <div class="coupon-succesfull mb-3">
+                    <div class="d-flex">
+                        <div ><img src="images/tick.png"></div>
+                          <div class="text-succesfull fw-400 ml-3 pt-1"><span class="awesome fw-500 mr-2">Awesome!</span>You saved<span class="awesome fw-500"> ₹100</span> on this order.</div>
+                     </div>
+                </div>
+                <p class="coupon-title fw-600">Check Out</p>
+                <div class="row">
+                    <div class="col-md-8 card-padd">
+                        <div class="card coupon-card-items">
+                            <div class="card-bg d-flex">
+                                <p class="carditems fw-600">Cart Items</p>
+                                <p class="itemsno ml-auto fw-400">2 Items</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="card ">
+                                    <div class="row">
+                                        <div class="col-md-3 ">
+                                            <div class="d-flex">
+                                                <div><img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                       <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia fw-600">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-md-none d-block ml-auto">
+                                                    <div class="inc-number ">
+                                                        ₹485
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card">
+                                            <div class="d-none d-md-block">
+                                                <div class="d-flex mb-2 ">
+                                                   <div> <img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex mb-2">
+                                                <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives,
+                                                    Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                                <!--increment and decrement-->
+                                                <div class="d-none d-md-block ">
+                                                    <div id="field1" class="field1 d-flex ml-4">
+                                                        <button type="button" id="sub" class="sub"><img
+                                                                src="images/minus.png"></button>
+                                                        <input type="number" id="1" class="num" value="1" min="1"
+                                                            max="10000">
+                                                        <button type="button" id="add" class="add"><img
+                                                                src="images/plus.png"></button>
+                                                    </div>
+                                                </div>
+                                                <!--increment and decrement-->
+                                                <div class="d-none d-md-block inc-number ml-auto">
+                                                    ₹485
+                                                </div>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <select class="js-example-placeholder-multiple js-states form-control"
+                                                    multiple="multiple">
+                                                    <option>panner</option>
+                                                    <option>potato</option>
+                                                    </select>
+                                                    <div class="d-md-none d-block ml-auto">
+                                                        <div id="field1" class="field1 d-flex ml-4 ml-auto">
+                                                        <button type="button" id="sub" class="sub"><img
+                                                                src="images/minus.png"></button>
+                                                        <input type="number" id="1" class="num" value="1" min="1"
+                                                            max="10000">
+                                                        <button type="button" id="add" class="add"><img
+                                                                src="images/plus.png"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="line-divider">
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 ">
+                                            <div class="d-flex">
+                                               <div> <img src="images/cardpiza.png" class="img-fluid cardpiza"></div>
+                                                <div class="d-md-none d-block">
+                                                    <div class="d-flex mb-2 ml-3">
+                                                        <div><img src="images/cardveg.png" class="img-fluid lia-img"></div>
+                                                        <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-md-none d-block ml-auto">
+                                                    <div class="inc-number ">
+                                                        ₹485
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 customize-card">
+                                            <div class="d-none d-md-block">
+                                                <div class="d-flex mb-2">
+                                                    <div><img src="images/cardveg.png" class="img-fluid"></div>
+                                                    <div class="lia">LIA<span class="italia">- Italia</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex mb-2">
+                                                <p class="card-text">9.0 inches, Neapolitan, Add ons - Kamalata Olives,
+                                                    Onions, Shrimp, Grilled Chicken, Truffle Oil, Smokey BBQ Sauce</p>
+                                                <!--increment and decrement-->
+                                                <div class="d-none d-md-block">
+                                                    <div id="field1 " class="field1 d-flex ml-4">
+                                                        <button type="button" id="sub" class="sub"><img
+                                                                src="images/minus.png"></button>
+                                                        <input type="number" id="1" class="num" value="1" min="1"
+                                                            max="10000">
+                                                        <button type="button" id="add" class="add"><img
+                                                                src="images/plus.png"></button>
+                                                    </div>
+                                                </div>
+                                                <!--increment and decrement-->
+                                                <div class="d-none d-md-block inc-number ml-auto">
+                                                    ₹485
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <select class="js-example-placeholder-multiple js-states form-control"
+                                                    multiple="multiple">
+                                                    <option>panner</option>
+                                                    <option>potato</option>
+                                                </select>
+                                                <div class="d-md-none d-block ml-auto">
+                                                    <div id="field1" class="field1 d-flex ml-4 ml-auto">
+                                                        <button type="button" id="sub" class="sub"><img
+                                                                src="images/minus.png"></button>
+                                                        <input type="number" id="1" class="num" value="1" min="1"
+                                                            max="10000">
+                                                        <button type="button" id="add" class="add"><img
+                                                                src="images/plus.png"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-primary p-0" data-toggle="modal" data-target="#applycoupon">
+                            <div class="apply-coupon d-flex">
+                                <p class="apply-coupontxt fw-500">Apply coupon</p>
+                                <div class="ml-auto">
+                                    <img src="images/right.png">
+                                </div>
+                            </div>
+                        </button>
+
+                      <!--  <div class="modal fade" id="applycoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body ">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <p class="coupon-modal mb-4">Coupons</p>
+                                        <div class="coup-list error-coupon mb-4">
+                                            <input type="text" class="coupon-note fw-500"
+                                                placeholder="Enter Coupon Code">
+                                            <p class="apply fw-500">Apply</p>
+                                        </div>
+                                        <div class="scroll custom-scrollbar">
+                                            <div class="exls d-flex mb-3">
+                                                <div>
+                                                    <p class="exl-text fw-500">EXL2020</p>
+                                                    <p class="discount">Get 40% off on your first order</p>
+                                                </div>
+                                                <p class="apply-discount text-center ml-auto mb-3">Apply </p>
+                                            </div>
+                                       
+                                            <div class="d-flex error-msg">
+                                                 <div class="oops-img img-fluid  mr-2"> <img class="oops-img" src="images/oops.png"></div>
+                                                 <p class="oops-bug "><span class="oops mr-1">OOPS!</span>This coupon can only
+                                                be redeeemed on your first order. Apply other coupon.</p>
+                                            </div>
+                                            <div class="custom-control custom-radio mb-3">
+                                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                <label class="custom-control-label  d-flex " for="customRadio1"> 
+                                                    <div>
+                                                      <p class="exl-text fw-500">EXL2020</p>
+                                                      <p class="discount">Get 40% off on your first order</p>
+                                                     </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </dip></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio2"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio3"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio4"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio5"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio6"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio7" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio7"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" id="customRadio8" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label  d-flex " for="customRadio8"> <div>
+                                                <p class="exl-text fw-500">EXL2020</p>
+                                                <p class="discount">Get 40% off on your first order</p>
+                                            </div>
+                                            <p class="apply-discount text-center ml-auto mb-3">Apply </p></label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                             </div>
+                        </div>-->
+                    <div class="total">
+                            <div class="total-shipping">
+                                <div class="d-flex mb-3">
+                                    <p class="sub-total fw-600">Subtotal</p>
+                                    <p class="total-amt fw-500  ml-auto">₹1270</p>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <p class="sub-total fw-400 ">Shipping</p>
+                                    <p class="charge fw-400 ml-auto">No extra charge </p>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <p class="sub-total fw-400">Packaging</p>
+                                    <p class="charge fw-400  ml-auto">No extra charge </p>
+                                </div>
+                                <div class="d-flex ">
+                                    <p class="sub-total fw-400 ">Tax</p>
+                                    <p class="charge fw-400  ml-auto">Included</p>
+                                </div>
+                            </div>
+                            <div class="amount-total d-flex ">
+                                <p class="sub-totals fw-600">TOTAL</p>
+                                <p class="amount-final fw-500 ml-auto">₹1270</p>
+                            </div>
+                        </div>
+                        <div class="procedd-bg">
+                            <div class="d-flex">
+                                <div>
+                                    <p class="amt fw-500 mb-1">₹1270</p>
+                                    <p class="amt-item fw-400">2 items in cart</p>
+                                </div>
+                                <button type="button" class="proceed fw-600 ml-auto" >Proceed</button>
+                             
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+                    
+                    
+                    <!-- Modal -->
+                    <div class="modal fade checkkk-out" id="Checkout" tabindex="-1" aria-labelledby="exampleModalLabel " aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Checkout As</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6 position-relative">
+                                        <div class="new-userrr">
+                                            <img class="img-fluid polyee" src="images/poly.png" alt="">
+                                            <img class="img-fluid recttt" src="images/recttt.png" alt="">
+                                            <img class="img-fluid half-roundd" src="images/half-round.png" alt="">
+                                            <p class="fs-20 fw-600 mb-3 next-time">Sign in to save your details for next time </p>
+                                            <button class="default-btn p-sec fw-600 in--now">Sign in Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="in-later ">
+                                            <p class="fw-600 or-later">OR</p>
+                                            <p class="p-sec fw-400 sign--inn-later">Sign in  Later</p>
+                                            <button class="default-btn p-sec fw-600 as-guest">Checkout as Guest</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Button trigger modal -->
+                    
+                            
+                    <!-- Modal -->
+                    
+                    
+            </div>
+        </section>
+
+            <button type="button" class=" btn proceed" data-toggle="modal" data-target="#Checkout">
+                Sign in / Sign as Guest
+            </button>
+        <h5>If customer already signIn</h5>
+            <button type="button" class=" btn proceed" data-toggle="modal" data-target="#proceed">
+                If customer already signIn select options
+            </button>
+            <button type="button" class="btn proceed" data-toggle="modal" data-target="#address">
+                Add Address
+            </button>
+            <button type="button" class="proceed" data-toggle="modal" data-target="#iframemap">Iframe Map</button>
+            <button type="button" class="proceed" data-toggle="modal" data-target="#iframe_address">Iframe Map / Address</button>
+        <h5>If customer already signIn</h5>
+        <button type="button" class="proceed" data-toggle="modal" data-target="#guestsign-in">
+            Guest Sign-in
+        </button>
+
+        
+    </div>
+
+   <!-- Coupon -->
+    <div class="modal fade coupon-popup" id="applycoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="d-flex d_md_none w-100">
+                        <div class="ml-3">
+                            <a href="#" class="back_btn" data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                        </div>
+                        <p class="add-adres fw-600 align-self-center text-center w-100">View  Coupons</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><div><img class="img-fluid mb-md-1 mr-md-4" src="images/cancel.png" alt=""></div></span>
+                    </button>
+                    <p class="coupon-modal fw-600 mb-4 d_sm_none">Coupons</p>
+                    <div class="coup-list error-coupon mb-4">
+                        <input type="text" class="coupon-note fw-500"
+                            placeholder="Enter Coupon Code">
+                        <button type="button" class="apply fw-500">Apply</button>
+                    </div>
+                    <div class="scroll custom-scrollbar rmv-scroll">
+                        <div class="exls d-flex mb-3">
+                            <div>
+                                <p class="exl-text fw-500">EXL2020</p>
+                                <p class="discount fw-400">Get 40% off on your first order</p>
+                            </div>
+                            <button type="button" class="apply-discount text-center ml-auto mb-3">Apply</button>
+                        </div>
+                   
+                        <div class="d-flex error-msg">
+                             <div class="oops-img img-fluid  mr-2"> <img class="oops-img" src="images/oops.png"></div>
+                             <p class="oops-bug fw-400 "><span class="oops fw-500 mr-1">OOPS!</span>This coupon can only
+                            be redeeemed on your first order. Apply other coupon.</p>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label  d-flex " for="customRadio1"> 
+                                <div>
+                                  <p class="exl-text fw-500">EXL2020</p>
+                                  <p class="discount fw-400">Get 40% off on your first order</p>
+                                 </div>
+                                 <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                        </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio2"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio3"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio4"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio5"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio6"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio7" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio7"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" id="customRadio8" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label  d-flex " for="customRadio8"> <div>
+                            <p class="exl-text fw-500">EXL2020</p>
+                            <p class="discount fw-400">Get 40% off on your first order</p>
+                        </div>
+                        <p class="apply-discount text-center ml-auto mb-3">Apply</p></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Add Address -->
+    <div class="modal fade locat-place" id="address" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="d-flex d_md_none w-100">
+                        <div class="ml-3">
+                            <a href="#" class="back_btn" data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                        </div>
+                        <p class="add-adres fw-600 align-self-center text-center w-100">Add Address</p>
+                    </div>
+                <h4 class="modal-title d_sm_none" id="exampleModalLabel">Add Address</h4>
+                <button type="button" class="close pt-1 mt-1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><div><img class="img-fluid mb-md-1 mr-md-4" src="images/cancel.png" alt=""></div></span>
+                </button>
+                </div>
+                <div class="modal-body searchh-locate ">
+                    <form class="custom-form mt-3 location-search" action="">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control location_search" placeholder="Enter delivering location"> -->
+                            <input type="text" id="project1" class="form-control location_search ui-autocomplete-input" placeholder="Enter delivering location" autocomplete="off">
+                            <input type="hidden" id="project-id1">
+                            <p id="project-description1"></p>
+                        </div>
+                    </form>
+                        <div class="d-flex use_currext">
+                        <div><img class="" src="images/location-yellow.png"></div>
+                        <p>Use Current Location</p>
+                        </div>
+                        <button class="default-btn p-sec fw-600 proceed proceed-locate ">Proceed</button>
+
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <!-- If customer already signIn select options -->
+    <div class="modal fade proceed-popup" id="proceed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="d-flex d_md_none ">
+                        <div class="ml-3">
+                            <a href="#" class="back_btn" data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                        </div>
+                        <p class="check-outt fw-600 align-self-center text-center w-100">Checkout</p>
+                        
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><div><img class="img-fluid cancel-selc-option" src="images/cancel.png" alt=""></div></span>
+                    </button>
+                    <h4 class="proceed-modal fw-500 ">Hello Miguel,</h4>
+                   
+                            <p class="whn-should mt-md-4 fw-500">When should we deliver it?</p>
+                    <div class="scrolling-bar custom-scrollbar rmv-scroll">
+                            <div class="d-flex to-tom mt-3  ">
+                                <div class="custom-control custom-radio mb-md-3 days-month">
+                                    <input type="radio" id="customRadio11" name="customRadio" class="custom-control-input today-tomaro" checked>
+                                    <label class="custom-control-label" for="customRadio11"> 
+                                        <p class="fw-500 to-dayy ">today</p>
+                                    </label>
+                                </div>
+                                
+                                <div class="custom-control custom-radio mb-md-3 days-month">
+                                    <input type="radio" id="customRadio21" name="customRadio" class="custom-control-input tomaro-today">
+                                    <label class="custom-control-label ml-md-3 ml-2 " for="customRadio21"> 
+                                        
+                                        <p class="fw-500 tom-dayy ">Tomorrow</p>   
+                                    </label>
+                                </div>
+                                <div class="position-relative">
+                                    <img class="img-fluid dwn-drop" src="images/dwn.png" alt="">
+                                    <input value="Select Date" type="name" id="datepicker" name="custom" class="date-pick">
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="  today-data" id="first" >
+                                <p class="whn-should  fw-500">SELECT DELIVERY Time</p>
+                                <div class="d-flex mt-3" >
+                                    <div class="custom-control custom-radio days-month ">
+                                        <input type="radio" id="customRadio31" name="customRadio1" class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="customRadio31"> 
+                                            <p class="fw-500 noon-time ">1:30 PM</p>
+                                        </label>
+                                    </div>
+                                    <div class="or-popup"> <p class="whn-should orrr fw-500">OR</p></div>
+                                    <div class=" select-size select-time">
+                                        <select class="selectpicker size-base">
+                                            <option>Pick Another Time</option>
+                                            <option>12:00 - 12:30 PM</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="earli-est" >Earliest</label>
+                            </div>
+                            <div class="tomorrow-data">
+                                <p class="whn-should mt-4 fw-500">Select delivery time from the slots</p>
+                                <div class="d-flex mt-3 somedata"id="second">
+                                    <div class=" select-size select-timing">
+                                        <select class="selectpicker size-base">
+                                            <option>12pm - 4PM</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class=" select-size select-timing ml-md-3 ml-2">
+                                        <select class="selectpicker size-base ">
+                                            <option>12pm - 4pm</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class=" select-size select-timing ml-md-3 ml-2">
+                                        <select class="selectpicker size-base ">
+                                            <option>12pm - 4 PM</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p class="whn-should slot mt-2 fw-500">Your selected slot is <a class="exact-time" href="#"> 1:30 - 2:30 PM</a></p>
+                            </div>
+                            <div class="addd-panel ">
+                                <p class="save--add fw-500">SAVED ADDRESS</p>
+                                <div class="custom-control custom-radio home--brder mt-3 ">
+                                    <input type="radio" class="custom-control-input" name="customRadio" id="customRadio44">
+                                    
+                                    <label class="custom-control-label  " for="customRadio44"><p class="fw-600 homiie">Home</p>
+                                        <p class="p-sec fw-400 grand-viw">Tower-A, Flat no. 854, Grand View Heights, Sector-11, Gurgaon</p>
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio home--brder homiee-brder mt-3 ">
+                                    <input type="radio" class="custom-control-input" name="customRadio" id="customRadio45">
+                                    <label class="custom-control-label  " for="customRadio45"><p class="fw-600 homiie">Other</p>
+                                        <p class="p-sec fw-400 grand-viw">Tower-A, Flat no. 854, Grand View Heights, Sector-11, Gurgaon</p>
+                                    </label>
+                                </div>
+                                <button class="default-btn add--new ">Add New address<span class="ml-2">+</span> </button>
+                            </div>
+                            <div class="addd-panel pay-panel">
+                                <p class="save--add fw-500 ">How would you like to pay</p>
+                                <div class="custom-control custom-radio mt-3">
+                                    <input type="radio" id="customRadio33" name="customRadio5" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio33"><p class="p-sec amt-type">Cash/Card on Delivery</p></label>
+                                </div>
+                                <div class="custom-control custom-radio mt-3">
+                                    <input type="radio" id="customRadio32" name="customRadio5" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio32"><p class="p-sec amt-type">Pay Online</p></label>
+                                </div>
+                            </div>
+                    </div>   
+                    </div>
+                        <div class="popup-bill">
+                            <div class=" two-cart d-flex">
+                                <div>  
+                                <h5 class="total-cost fw-500">₹1270</h5>
+                                <p class="two-items ">2 Items in cart</p>
+                                </div>
+                                <button class="default-btn  view--cartt  place-ur fw-600">Place Your Order </button>
+                            </div>
+                        </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Iframe Map -->
+    <div class="modal fade proceed-popup" id="iframemap" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog mx-480">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="d-flex d_md_none">
+                        <div class="ml-3">
+                            <a href="#" class="back_btn"data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                        </div>
+                        <p class="add-adres fw-600 align-self-center text-center w-100">Add Address</p>
+                        
+                    </div>
+                        <div class="d-flex iframe-address">
+                            <h4 class="proceed-modal d_sm_none fw-500 border-0 pb-0">Add Address</h4>
+                            <button type="button" class="close align-self-center ml-auto" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><div><img class="img-fluid" src="images/cancel.png" alt=""></div></span>
+                            </button>
+                        </div>
+                        <div class=" pop-up-pad pl-0">
+                            <div class="text-center">
+      
+                            <div id="map"></div> 
+                            Latitude <input type="text" id="la" name="latitude" value="15.151857"> <br>
+                            Longitude<input type="text" id="lo" name="longitude" value="76.923595">
+                           
+
+                                <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2" async ></script> -->
+                            </div>
+                            <div class="confirm-modal pl-0 pr-0 text-right">
+                                <button class="default-btn confirm  fw-600">Confirm </button>
+                            </div>
+                        </div>
+                </div>
+                  
+                
+            </div>
+        </div>
+    </div>
+    <!-- Iframe Map and Address -->
+    <div class="modal fade proceed-popup" id="iframe_address" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog mx-480">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="d-flex d_md_none back-addres">
+                        <div class="ml-3">
+                            <a href="#" class="back_btn" data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                        </div>
+                        <p class="add-adres fw-600 align-self-center text-center w-100">Add Address</p>
+                        
+                    </div>
+                       <div class="d-flex iframe-address">
+                            <h4 class="proceed-modal d_sm_none fw-500 iframe-address pb-10">Add Address</h4>
+                            <button type="button" class="close  align-self-center ml-auto pt-1 mt-1" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><div><img class="img-fluid mb-3 mr-2" src="images/cancel.png" alt=""></div></span>
+                            </button>
+                        </div>
+                        <div class=" pop-up-pad manual-add">
+                            <div class="text-center">
+
+                              
+                            </div>
+                            <!---->
+                             <div class="address">
+                                    <div class="d-flex mt-2">
+                                          <div>
+                                                 <img src="images/modal-address.png" class="img-fluid">
+                                          </div>
+                                          <div>
+                                              <h6 class="address-text">
+                                                  Jayanagar
+                                              </h6>
+                                          </div>
+                                          <div class="ml-auto">
+                                                  <img src="images/modal-cross.png" class="img-fluid">
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <p class="address-details">
+                                              18th Main road, 37th F, Jayanagara Jaya Nagar, Bengaluru, Karnataka 560041
+                                          </p>
+                                    </div>
+                             </div>
+                            
+                          <form class="formvalidation">
+                             <div class="modal-inputs manual-addres">
+                                 <div class="mb-40 form-group">
+                                          <!-- <div class="holder">House/Flat No. <span class="red"> *</span></div> -->
+                                          <input id="input" size="18" type="text" name="house" class="form-control" placeholder="House/Flat No.*"  data-bv-notempty-message="Please Enter house/flat no." required>
+                                 </div>
+                          
+                                      <div class="mb-16 form-group">
+                                          <!-- <div class="holder">Lankmark <span class="red"> *</span></div> -->
+                                          <input id="input" size="18" type="text" name="land" class="form-control" placeholder="Lankmark *" data-bv-notempty-message="Please enter Landmark" required>
+                                      </div>
+
+                                    
+                             </div>
+
+                              <h6 class="loc-text">What type of location is this?</h6>
+
+                              <div class="form-group">
+                                          <div class="d-flex flex-wrap">
+                                              <div class="radio-example mx-400">
+                                                      <div class="modal-radio btn-group btn-group-toggle" data-toggle="buttons">
+                                                              <div class="mr-12 radio-clr ">
+                                                                  <label class="btn btn-secondary">
+                                                                    <div class="align-self-end"><img class="img-fluid" src="images/om.svg" alt=""></div>
+                                                                      <input type="radio" name="options" id="option1" value="a" data-bv-field="city"> 
+                                                                      <i class="fa fa-home mr-9" aria-hidden="true"></i>Home
+                                                                      
+                                                                  </label>
+                                                              </div>
+
+                                                              <div class="mr-12 radio-clr">
+                                                                      <label class="btn btn-secondary">
+                                                                        <div class=""><img class="img-fluid" src="images/work-iframe.png" alt=""></div>
+                                                                      <input type="radio" name="options" id="option2" value="b" data-bv-field="city">
+                                                                      <i class="fa fa-briefcase mr-9" aria-hidden="true"></i>Work
+                                                                      </label>
+                                                              </div>
+
+                                                              <div class="radio-clr">
+                                                                      <label class="btn btn-secondary">
+                                                                        <div class="align-self-end"><img class="img-fluid" src="images/other-iframe.png" alt=""></div>
+                                                                      <input type="radio" name="options" id="option3" value="c" data-bv-field="city" data-bv-notempty-message="Please select" required>
+                                                                      <i class="fa fa-map-marker mr-9" aria-hidden="true"></i>Other
+                                                                      </label>
+                                                              </div>
+                                                      </div>
+                                              </div>
+                                          </div>
+                              </div>
+
+                              <div class="confirm-modal pt-16 pl-0 pr-0 text-right">
+                                  <button type="submit" class="default-btn confirm  fw-600">Confirm & Save Address</button>
+                              </div>
+                      </form>
+                 </div>
+                </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+    <!-- Guest SignIn -->
+    <div class="modal fade proceed-popup" id="guestsign-in" tabindex="-1" aria-labelledby="guestsign-inLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="formvalidation">
+                    <div class="modal-body ">
+                        <div class="d-flex d_md_none">
+                            <div class="ml-3">
+                                <a href="#" class="back_btn"data-dismiss="modal" aria-label="Close"><img class="mr-2 pr-1 " src="images/back.png">Back</a>
+                            </div>
+                            <p class="check-outt fw-600 align-self-center text-center w-100">Checkout</p>
+                             
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><div><img class="img-fluid cancel--head" src="images/cancel.png" alt=""></div></span>
+                        </button>
+                        <div class="d_md_none position-relative">
+                            <div class="new-userrr">
+                                <p class="fs-20 fw-600 mb-3 next-time">Sign in to save your details for next time </p>
+                                <button class="default-btn p-sec fw-600 in--now">Sign in Now</button>
+                            </div>
+                        </div>
+                        
+                        
+                        <p class="proceed-modal  as-guestt fs-20 fw-600 ">Check out as a guest</p>
+
+                        <p class="whn-should mt-4 fw-500">When should we deliver it?</p>
+                        <div class="scrolling-bar custom-scrollbar rmv-scroll">
+                            <div class="d-flex to-tom mt-3  ">
+                                <div class="custom-control custom-radio mb-md-3 days-month">
+                                    <input type="radio" id="today1" name="customRadio" class="custom-control-input today-tomaro"
+                                        checked>
+                                    <label class="custom-control-label" for="today1">
+                                        <p class="fw-500 to-dayy ">today</p>
+                                    </label>
+                                </div>
+
+                                <div class="custom-control custom-radio mb-md-3 days-month">
+                                    <input type="radio" id="today2" name="customRadio" class="custom-control-input tomaro-today">
+                                    <label class="custom-control-label ml-md-3 ml-2 " for="today2">
+
+                                        <p class="fw-500 tom-dayy ">Tomorrow</p>
+                                    </label>
+                                </div>
+                                <div class="position-relative">
+                                    <img class="img-fluid dwn-drop" src="images/dwn.png" alt="">
+                                    <input value="Select Date" type="name" id="datepicker" name="custom" class="date-pick">
+                                </div>
+
+                            </div>
+
+                            <div class="  today-data" id="first">
+                                <p class="whn-should  fw-500">SELECT DELIVERY Time</p>
+                                <div class="d-flex mt-3">
+                                    <div class="custom-control custom-radio days-month ">
+                                        <input type="radio" id="customRadio31" name="customRadio1"
+                                            class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="customRadio31">
+                                            <p class="fw-500 noon-time ">1:30 PM</p>
+                                        </label>
+                                    </div>
+                                    <div class="or-popup">
+                                        <p class="whn-should orrr fw-500">OR</p>
+                                    </div>
+                                    <div class=" select-size select-time">
+                                        <select class="selectpicker size-base">
+                                            <option>Pick Another Time</option>
+                                            <option>12:00 - 12:30 PM</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="earli-est">Earliest</label>
+                            </div>
+                            <div class="tomorrow-data">
+                                <p class="whn-should mt-4 fw-500">Select delivery time from the slots</p>
+                                <div class="d-flex mt-3 somedata" id="second">
+                                    <div class=" select-size select-timing">
+                                        <select class="selectpicker size-base">
+                                            <option>12pm - 4PM</option>
+                                            <option>12pm - 1PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class=" select-size select-timing ml-md-3 ml-2">
+                                        <select class="selectpicker size-base ">
+                                            <option>12pm - 4PM</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class=" select-size select-timing ml-md-3 ml-2">
+                                        <select class="selectpicker size-base ">
+                                            <option>12pm - 4PM</option>
+                                            <option>12:30 - 1:00 PM</option>
+                                            <option>1:00 - 1:30 PM</option>
+                                            <option>1:30 - 2:30 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                            <option>2:30 - 3:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p class="whn-should slot mt-2 fw-500">Your selected slot is <a class="exact-time" href="#">
+                                        1:30 - 2:30 PM</a></p>
+                            </div>
+                            <div class="guest-signin">
+                                
+                                <div class="accordion mt-md-4 pt-md-3" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    Who are we delivering to?
+                                                    <div ><img src="images/signin-tick.png" class="img-fluid float-right sign-tick"></div>
+                                                </button>
+                                            </h2>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="d-md-flex">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputname">Name*</label>
+                                                        <input type="name" class="form-control input-text " placeholder="marshal matthe|" name="name" data-bv-notempty-message="Please enter name" required="" data-bv-field="name" id="exampleInputname">
+                                                    </div>
+                                                    <div class="form-group position-relative number_valid country-code has-error ml-md-4">
+                                                        <label for="exampleInputmoblie">Mobile*</label>
+                                                        <input type="number" class="form-control log-inn restrict_alphabits input-text " placeholder=" 8959494988" name="moblie"  maxlength="10" minlength="10" autocomplete="off" required="" data-bv-notempty-message="Please enter number" required="" data-bv-field="moblie" id="exampleInputmoblie">
+                                                        <span class="validity"></span>
+                                                        <p>+91</p>
+                                                    </div>     
+                                                    </div>  
+                                                    <div class="form-group mails-guest mt-md-4 pb-md-4 ">
+                                                        <label for="exampleInputemail">Email*</label>
+                                                        <input type="email" class="form-control input-text " placeholder="Marshal@gmail.com" name="email" data-bv-notempty-message="Please enter email" required="" data-bv-field="email" id="exampleInputemail">
+                                                    </div>                 
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion mt-4 pt-3" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingtwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsetwo" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    Where should we deliver it?
+                                                    <div ><img src="images/signin-tick.png" class="img-fluid float-right sign-tick"></div>
+                                                </button>
+                                            </h2>
+                                        </div>
+
+                                        <div id="collapsetwo" class="collapse show" aria-labelledby="headingtwo"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="d-md-flex">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputname">Flat/House No.*</label>
+                                                        <input type="text" class="form-control input-text  " placeholder="E-485" name="houseno" data-bv-notempty-message="Please enter house/flat number" required="" data-bv-field="houseno" id="exampleInputhouseno">
+                                                    </div>
+                                                    <div class="form-group ml-md-4">
+                                                        <label for="exampleInputmoblie">Street Address*</label>
+                                                        <input type="text" class="form-control input-text " placeholder="Raj Nagar" name="address" data-bv-notempty-message="Please enter street" required="" data-bv-field="address" id="exampleInputaddress">
+                                                    </div>     
+                                                </div> 
+                                                    <div class="d-md-flex  mt-md-3 pb-md-4">
+                                                        <div class="form-group ">
+                                                            <label for="exampleInputemail">Town/City*</label>
+                                                            <input type="text" class="form-control input-text" placeholder="Gurgaon" name="city" data-bv-notempty-message="Please enter town/city"  required="" data-bv-field="city" id="exampleInputcity">
+                                                        </div> 
+                                                        <div class="form-group mails-guest ml-md-4">
+                                                            <label for="exampleInputemail">Pincode*</label>
+                                                            <input type="number" class="form-control input-text " placeholder="158476" name="number" data-bv-notempty-message="Please enter code" required="" data-bv-field="number" id="exampleInputnumber">
+                                                        </div> 
+                                                    </div>                
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addd-panel pay-panel">
+                                    <p class="save--add fw-500 ">How would you like to pay</p>
+                                    <div class="custom-control custom-radio mt-md-3 mt-4">
+                                        <input type="radio" id="customRadio73" name="customRadio9" class="custom-control-input">
+                                        <label class="custom-control-label cash--card" for="customRadio73">Cash/Card on Delivery</label>
+                                    </div>
+                                    <div class="custom-control custom-radio mt-md-3 mt-4">
+                                        <input type="radio" id="customRadio74" name="customRadio9" class="custom-control-input">
+                                        <label class="custom-control-label cash--card" for="customRadio74">Pay Online</label>
+                                    </div>
+                                </div>
+                              
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-bill">
+                        <div class=" two-cart d-flex">
+                            <div>
+                                <h5 class="total-cost fw-500">₹1270</h5>
+                                <p class="two-items ">2 Items in cart</p>
+                            </div>
+                            <button type="submit" class="default-btn  view--cartt  place-ur fw-600">Place Your Order </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+ 
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/custom.js"></script>
+
+
+    <script>
+        $( function() {
+          var projects = [
+            {
+              value: "Arjun",
+              label: "HSR Layout",
+              desc: "Bengaluru, Karnataka, India",
+            },
+            {
+              value: "Reddy",
+              label: "HSR BDA Complex",
+              desc: "Agara Lake, Sector 6, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: "HSR Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }, 
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }
+          ];
+       
+          $( "#project" ).autocomplete({
+            minLength: 0,
+            source: projects,
+            focus: function( event, ui ) {
+              $( "#project" ).val( ui.item.label );
+              return false;
+            },
+            select: function( event, ui ) {
+              $( "#project" ).val( ui.item.label );
+              $( "#project-id" ).val( ui.item.value );
+              $( "#project-description" ).html( ui.item.desc );
+              // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+              return false;
+            }
+          })
+          .autocomplete( "instance" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+              .append( "<div>" + "<p>" + item.label + "</p>"  + "<span>" + item.desc + "</span>" + "</div>" )
+              .appendTo( ul );
+          };
+      
+        });
+
+
+        $( function() {
+          var projects = [
+            {
+              value: "Arjun",
+              label: "HSR Layout",
+              desc: "Bengaluru, Karnataka, India",
+            },
+            {
+              value: "Reddy",
+              label: "HSR BDA Complex",
+              desc: "Agara Lake, Sector 6, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: "HSR Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            },
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }, 
+            {
+              value: "sizzlejs",
+              label: " Layout Police Station",
+              desc: "27th Main Road, 1st Sector, HSR Layout, Bengaluru, Karnataka, India",
+            }
+          ];
+       
+          $( "#project1" ).autocomplete({
+            minLength: 0,
+            source: projects,
+            focus: function( event, ui ) {
+              $( "#project" ).val( ui.item.label );
+              return false;
+            },
+            select: function( event, ui ) {
+              $( "#project1" ).val( ui.item.label );
+              $( "#project-id1" ).val( ui.item.value );
+              $( "#project-description1" ).html( ui.item.desc );
+              // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+              return false;
+            }
+          })
+          .autocomplete( "instance" )._renderItem = function( ul, item ) {
+            return $( "<li>" )
+              .append( "<div>" + "<p>" + item.label + "</p>"  + "<span>" + item.desc + "</span>" + "</div>" )
+              .appendTo( ul );
+          };
+      
+        });
+        </script>
+      
+   
+      
+      <script>
+        
+
+        var latitude = Number(document.getElementById("la").value);
+        var longitude = Number(document.getElementById("lo").value);
+        
+        function initMap() {
+          var uluru = {
+            lat: latitude,
+            lng: longitude
+          };
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 16,
+            center: uluru,
+            styles: [
+              { elementType: "geometry", stylers: [{ color: "#343332" }] },
+              { elementType: "labels.text.stroke", stylers: [{ color: "#343332" }] },
+              { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+              {
+                featureType: "road",
+                elementType: "geometry",
+                stylers: [{ color: "#454545" }],
+              },
+              {
+                featureType: "road",
+                elementType: "geometry.stroke",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road.highway",
+                elementType: "geometry",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road.highway",
+                elementType: "geometry.stroke",
+                stylers: [{ color: "#343332" }],
+              },
+              {
+                featureType: "road.highway",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#343332" }],
+              },
+              // {
+              //   featureType: "transit",
+              //   elementType: "geometry",
+              //   stylers: [{ color: "#343332" }],
+              // },
+              // {
+              //   featureType: "transit.station",
+              //   elementType: "labels.text.fill",
+              //   stylers: [{ color: "#343332" }],
+              // },
+              // {
+              //   featureType: "water",
+              //   elementType: "geometry",
+              //   stylers: [{ color: "#343332" }],
+              // },
+              // {
+              //   featureType: "water",
+              //   elementType: "labels.text.fill",
+              //   stylers: [{ color: "#343332;" }],
+              // },
+              // {
+              //   featureType: "water",
+              //   elementType: "labels.text.stroke",
+              //   stylers: [{ color: "#343332" }],
+              // },
+            ],
+          });
+          var iconBase = '../html/images/';
+          marker = new google.maps.Marker({
+            position: uluru,
+            animation: google.maps.Animation.DROP,
+            map: map,
+            draggable: true,
+            icon: iconBase + 'location_pin.png'
+            //title: "Hello World!",
+          });
+          google.maps.event.addListener(marker, 'dragend',
+            function(marker) {
+                console.log(marker)
+            //   currentLatitude = marker.position.lat();
+            //   currentLongitude = marker.position.lng();
+            //   $("#la").val(currentLatitude);
+            //   $("#lo").val(currentLongitude);
+            }
+          );
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
+
+   </script>
+
+       
+       
+
+</body>
+
+</html>
